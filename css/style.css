@@ -787,8 +787,20 @@ button.ghost {
 
 /*Places*/
 .places-main-content img{
-	margin: 10px auto 20px;
+	/*margin: 10px auto 20px;*/
     display: block;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.places-main-content .row {
+  display: flex;
+  margin: 20px;
+}
+
+.places-main-content .column {
+  flex: 33.33%;
+  padding: 25px;
 }
 
 @media only screen and (max-width: 1024px){
@@ -829,6 +841,7 @@ button.ghost {
   }
   /*pozicionohet sipas 'prindit' gi-main-content ose login-body*/
   .getInvolved-h2{
+	/*margin: 20px 30px 30px 0px;*/
     position: absolute;
     top: 100px;
     font-size: 40px;
@@ -843,10 +856,15 @@ button.ghost {
 	margin: 35% auto; 
     display: flex;
   }
+  
+  .column {
+    width: 100%;
+  }
 
   /*HOME*/
   .home-main-content{
     margin: 200px 0px;
+	position:fixed;
   }
 
 }
