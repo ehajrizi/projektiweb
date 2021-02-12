@@ -339,6 +339,9 @@ footer p{
 .social-media {
   display: inline-flex;
 }
+.social-media a:visited {
+  color:  #5b5251;
+}
 /* rregullimi i ikonave te marrura nga libraria fontawesome  */
 .social-media .icon{
   margin: 0 15px;
