@@ -893,7 +893,13 @@ button.ghost {
   padding: 20px;
 }
 /* Responsive, atehere kur screen eshte me i madh se 420 px me i stack nje mbi nje */
-@media screen and (max-width: 420px) {
+@media only screen and (max-width: 420px) {
+  .music-left-container , .music-right-container {   
+    width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 770px) {
   .music-left-container , .music-right-container {   
     width: 100%;
     padding: 0;
