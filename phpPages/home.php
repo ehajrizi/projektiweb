@@ -18,7 +18,7 @@
             </button>
             <div class="home-dropdown-content">
             <a href="books.php">Books</a>
-            <a href="#">Music</a>
+            <a href="Music.php">Music</a>
             <a href="Places.php">Places</a>
             </div>
           </div>

@@ -871,4 +871,37 @@ button.ghost {
   }
 
 }
+ 
+/*Music page*/
+.music-left-container {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.music-right-container {
+  float: left;
+  width: 25%;
+  background-color: #e8dbc1;
+  padding-left: 20px;
+}
+
+/* foto e kontentit */
+.contentimg {
+  background-color: #788571;
+  width: 100%;
+  padding: 20px;
+}
+/* Responsive, atehere kur screen eshte me i madh se 420 px me i stack nje mbi nje */
+@media screen and (max-width: 420px) {
+  .music-left-container , .music-right-container {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+
+
+
 
