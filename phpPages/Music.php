@@ -7,7 +7,7 @@ include '../phpFiles/header.php';
    <div class= "music_artists" >
         <div class ="artist_info"> 
             <div class ="artist_img">
-                <img src ="" alt="artist_info_img">
+                <img src ="sabrifejzullahu.png" alt="artist_info_img">
             </div>
             <h3> John Doe </h3>
             <p class="role">pop artust</p>
@@ -17,7 +17,7 @@ include '../phpFiles/header.php';
 
         <div class ="artist_info"> 
             <div class ="artist_img">
-                <img src ="" alt="artist_info_img">
+                <img src ="elifara.png" alt="artist_info_img">
             </div>
             <h3> John Doe </h3>
             <p class="role">pop artust</p>
