@@ -249,7 +249,7 @@ body{
 .aboutUs-inner-container h1{
   margin-bottom: 30px;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 800;
   text-align: center;
 }
 .text{
@@ -270,9 +270,9 @@ body{
 }
 .contactUs-container h1{
   margin-bottom: 30px;
-  font-size: 30px;
-  font-weight: 900;
-  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: left;
 }
 input[type=text], textarea {
   width: 300px;
@@ -809,23 +809,26 @@ button.ghost {
 @media only screen and (max-width: 1024px){
 
   .header,.home-header{
-    height:70px;
+    height:60px;
     padding: 10px;
-    font-size:20px;
+    font-size:16px;
   }
-
   .dropdown .dropbtn,.home-dropdown .home-dropbtn{
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .all-backgound{
+    overflow-x: hidden;
+    height:100vh;
   }
   
   footer{
-     height: 110px;
+     height: 100px;
   }
 
   footer p{
     font-size: 15px;
   }
-/*Rrethat ku ndodhen ikonat*/
+  /*Rrethat ku ndodhen ikonat*/
   .social-media .icon span{
     height: 45px;
     width: 45px;
@@ -836,11 +839,166 @@ button.ghost {
     font-size:25px;
     line-height:45px; /*distanca vertikale*/
   }
+  /*HOME*/
+    .home-main-content{
+      margin: 200px 0px;
+    position:fixed;
+  }
+  /*ABOUT US*/
+  .aboutUs-container{
+    background-repeat:no-repeat;
+    background-size:700px;
+    background-position: center;
+    overflow:hidden;
+    letter-spacing:1px;
+    padding:100px 0;
+    width:95%;
+    height:100hv;
+    float:center;
+  }
+  .aboutUs-inner-container{
+    width:80%;
+    height:500px;
+    float:center;
+    background-color:#e8f4d5 ;
+    padding:150px;
+  }
+  .aboutUs-inner-container h1{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+  }
+  .text{
+    font-size: 12px;
+    color:#617087 ;
+    line-height:20px;
+    text-align: justify;
+    margin-bottom: 40px;
+  
+  }
+  .contactUs-container{
+    width:100%;
+    float:center;
+    padding:20px;
+  }
+  .contactUs-container h1{
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+  }
+  input[type=text], textarea {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    position:center;
+  }
+  .column {
+    float: center;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /*BOOKS*/
+  .books-main-content{
+    text-align: center;
+    background-color: #e8dbc1;
+  
+  }
 
-   /*GET INVOLVED*/
+  .books-main-content h1{
+    padding-top: 30px;
+    font-size:23px;
+
+  }
+
+  .scrolling-wrapper{
+    width: 80%;
+    margin:0 auto;
+    display: flex;
+    background-color: #e8dbc1;
+    padding: 3rem;
+  }
+
+  .card {
+    min-width: 200px;
+    height: 350px;
+
+  }
+
+  /*Per mos-overflow nga cards afer*/
+  .card:not(:first-child) {
+    margin-left: -130px;
+  }
+
+  .card:hover {
+    transform: translateY(-1rem);
+  }
+ 
+
+  .books-main-content img {
+    padding: 1px;
+    width: 130px;
+    height: 180px
+  
+  }
+
+
+
+/*butoni see all*/
+  #see-all{
+    border-radius: 20px;
+    border: 1px solid #F7DC6F;
+    background-color: #F7DC6F;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+
+  /*PLACES*/
+  .places-main-content img{
+    margin: 35% auto; 
+    display: flex;
+  }
+    
+  .column {
+    width: 50%;
+  }
+
+  /*PLACES*/
+  .places-main-content img{
+    margin: 35% auto; 
+     display: flex;
+  }
+    
+  .column {
+     width: 100%;
+  }
+
+  /*Music page*/
+  .music_main_content h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+    
+  /*GET INVOLVED*/
   /*qe mos te paraqitet opsioni scroll*/
   .login-body{
-	position:fixed;
+	  position:fixed;
   }
   /*pozicionohet sipas 'prindit' gi-main-content ose login-body*/
   .getInvolved-h2{
@@ -853,23 +1011,6 @@ button.ghost {
   .getInvolved-container{
     width: 690px;
   }
-  
-  /*PLACES*/
-  .places-main-content img{
-	margin: 35% auto; 
-    display: flex;
-  }
-  
-  .column {
-    width: 100%;
-  }
-
-  /*HOME*/
-  .home-main-content{
-    margin: 200px 0px;
-	position:fixed;
-  }
-
 }
  
 /*Music page*/
@@ -877,7 +1018,7 @@ button.ghost {
   margin-top:10%
 }
 .music_main_content h1 {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 52px;
   margin-bottom: 60px;
   text-align: center;
@@ -915,13 +1056,13 @@ button.ghost {
 
 }
 .music_artists .artist_info .artist_info_img  {
-      width:100px;
-      height:100px;
-      border-radius: 50%;
-      position:absolute;
-      top: -50px;
-      left:50%;
-      transform: translate(-50%);
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  position:absolute;
+  top: -50px;
+  left:50%;
+  transform: translate(-50%);
     
 }
 .music_artists .artist_info .artist_info_img img {
@@ -940,12 +1081,7 @@ button.ghost {
     padding: 0;
   }
 }
-@media only screen and (max-width: 7px) {
-  .music-left-container , .music-right-container {   
-    width: 100%;
-    padding: 0;
-  }
-}
+
 
 
 
