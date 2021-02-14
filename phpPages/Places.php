@@ -3,23 +3,51 @@ include '../phpFiles/header.php';
 ?>
 			
 			<div class="places-main-content">
-
-					<div class="row">
-						<div class="column">
-							<img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/62/05/db/restaurant-ujvara-e-drinit.jpg" alt="Drini's Waterfall" style="width:100%">
+				<h1>Tourist Atractions</h1>
+				
+					<div class="places">
+						<div class="map">
+							<p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d777233.1596769514!2d20.433676996994624!3d42.59891903316791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPristina!5e0!3m2!1sen!2sus!4v1613311328681!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
 						</div>
-						<div class="column">
-							<img src="https://viewkosova.com/wp-content/uploads/2018/10/batllava-lake-kosovo2.jpg" alt="Batllava Lake" style="width:100%">
-						</div>
-						<div class="column">
-							<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e1/ca/f6.jpg" alt="Prizren" style="width:100%">
+						
+						
+						<div class="otherPlaces">
+							<div class ="place_info"> 
+								<div class ="place_img">
+									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+								</div>
+								<h3> City </h3>
+								<p>Lorem ispun</p>
+							</div>
+							
+							<div class ="place_info"> 
+								<div class ="place_img">
+									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+								</div>
+								<h3> City </h3>
+								<p>Lorem ispun</p>
+							</div>
+							
+							<div class ="place_info"> 
+								<div class ="place_img">
+									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+								</div>
+								<h3> City </h3>
+								<p>Lorem ispun</p>
+							</div>
+							
+							<div class ="place_info"> 
+								<div class ="place_img">
+									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+								</div>
+								<h3> City </h3>
+								<p>Lorem ispun</p>
+							</div>
 						</div>
 					</div>
-					
-				    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/city-map-2-1106880.png" alt="centered image" />
-			
 			</div>
 			
 <?php
 include '../phpFiles/footer.php';
 ?>
+ 

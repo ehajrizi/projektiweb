@@ -86,5 +86,14 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement->bindParam(":subject", $subject);
         $statement->execute();
     }
+	
+	
+	public function getAllBooks(){
+		$this -> query = "select *  from books";
+		$statement = $this->conn-> prepare($this -> query);
+		$statement -> execute();
+		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
 }
 ?>

@@ -789,22 +789,38 @@ button.ghost {
 }
 
 /*Places*/
-.places-main-content img{
-	/*margin: 10px auto 20px;*/
-    display: block;
-	margin-left: auto;
-	margin-right:auto;
-}
+  .places-main-content h1{
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 32px;
+	text-align: center;
+  }
+  
+  .places img{
+	  width: 200px;
+	  height: 150px;
+  }
 
-.places-main-content .row {
-  display: flex;
-  margin: 20px;
-}
-
-.places-main-content .column {
-  flex: 33.33%;
-  padding: 25px;
-}
+  .map{
+    width: 60%;
+    float: left;
+    padding: 10px;
+  } 
+  
+  .otherPlaces{
+	width: 40%;
+    float: left;
+    padding: 10px;
+  }
+  
+  .map p{
+	 text-align: center; 
+  }
+  
+  .place_info{
+	width: 40%;
+    float: left;
+    padding: 5px;
+  }
 
 @media only screen and (max-width: 1024px){
 
@@ -1011,8 +1027,9 @@ button.ghost {
   .getInvolved-container{
     width: 690px;
   }
+
+
 }
- 
 /*Music page*/
 .music_main_content{
   margin-top:10%
@@ -1071,7 +1088,6 @@ button.ghost {
   padding:10px;
 
 }
-
 
 
 /* Responsive, atehere kur screen eshte me i madh se 420 px me i stack nje mbi nje */
