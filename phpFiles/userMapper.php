@@ -73,5 +73,18 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement->bindParam(":role", $role);
         $statement->execute();
     }
+	
+	public function insertContactData(\ContactData $data)
+    {
+        $this->query = "insert into contact (firstname, lastname, subject) values (:firstname, :lastname, :subject)";
+        $statement = $this->conn->prepare($this->query);
+		$firstname = $data->getFirstName();
+        $lastname = $data->getLastName();
+        $subject = $data->getSubject();
+        $statement->bindParam(":firstname", $firstname);
+        $statement->bindParam(":lastname", $lastname);
+        $statement->bindParam(":subject", $subject);
+        $statement->execute();
+    }
 }
 ?>
