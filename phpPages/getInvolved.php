@@ -16,15 +16,15 @@ include '../phpFiles/header.php';
 							<a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="social" class="gI-a"><i class="fab fa-google-plus-g"></i></a>
 						</div>
 						<span class="getInvolved-span">or use your email for registration</span>
-						<input type="text" placeholder="Name" id="name" class="gI-input"/>
-						<input type="text" placeholder="Username" id="username" class="gI-input"/>
-						<input type="email" placeholder="Email" id="email" class="gI-input"/>
-						<input type="password" placeholder="Password" id="password" class="gI-input"/>
-						<button id="RegBtn" class="gI-button">Register</button>
+						<input type="text" placeholder="Name" id="name" name="reg-name" class="gI-input"/>
+						<input type="text" placeholder="Username" id="username" name="reg-username"  class="gI-input"/>
+						<input type="email" placeholder="Email" id="email"  name="reg-email" class="gI-input"/>
+						<input type="password" placeholder="Password" id="password" name="reg-password"  class="gI-input"/>
+						<button id="RegBtn" name="regbtn" class="gI-button">Register</button>
 					</form>
 				</div>
 				<div class="form-container sign-in-container">
-					<form name="myform" class="gI-form" action="#">
+					<form name="myform" class="gI-form" action="../phpFiles/dataVerify.php" method="post" onsubmit="return validate()">
 						<h1 class="getInvolved-h1">Log in</h1>
 						<div class="social-container">
 							<a href="https://www.facebook.com/" class="social" class="gI-a"><i class="fab fa-facebook-f"></i></a>
@@ -34,7 +34,7 @@ include '../phpFiles/header.php';
 						<input type="text" name="username" placeholder="Username" id="username1" class="gI-input"/>
 						<input type="password" name="password" placeholder="Password" id="password1" class="gI-input"/>
 						<a class="gI-a" href="#">Forgot your password?</a>
-						<button id="LogInBtn" class="gI-button">Log In</button>
+						<button id="LogInBtn" name="loginbtn" class="gI-button">Log In</button>
 					</form>
 				</div>
 				<div class="overlay-container">

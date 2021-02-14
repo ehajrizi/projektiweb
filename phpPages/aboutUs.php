@@ -23,7 +23,7 @@ include '../phpFiles/header.php';
                             <input type="text" id="lname" name="lastname" placeholder="Your last name..">
                             <label for="subject">Subject</label>
                             <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-                            <button id="submitbtn"> Submit </button>
+                            <button id="submitbtn" name="submitbtn"> Submit </button>
                         </form>
                     </div>
                   
