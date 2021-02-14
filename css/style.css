@@ -266,7 +266,7 @@ body{
 .contactUs-container{
   width:30%;
   float:right;
-  padding:20px;
+  padding:10px;
 }
 .contactUs-container h1{
   margin-bottom: 30px;
@@ -882,8 +882,9 @@ button.ghost {
   padding:10px;
 
 }
+/*/////////////////////////////////////////////////////////////////////*/
 /*responsive per ipad*/
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 768px){
 
   .header,.home-header{
     height:60px;
@@ -1048,23 +1049,38 @@ button.ghost {
 
   /*PLACES*/
   .places-main-content img{
-    margin: 35% auto; 
+    margin: 10% auto; 
     display: flex;
   }
     
   .column {
     width: 50%;
   }
+  .places img{
+	  width: 250px;
+	  height: 150px;
+	  
+  }
 
-  /*PLACES*/
-  .places-main-content img{
-    margin: 35% auto; 
-     display: flex;
+  .map{
+    width: 100%;
+    float: center;
+    padding: 10px;
+  } 
+  
+  .otherPlaces{
+	width: 40%;
+    float: left;
+    padding: 10px;
   }
-    
-  .column {
-     width: 100%;
+  
+ 
+  
+  .place_info{
+	width: 40%;
+        padding: 5px;
   }
+  
 
   /*Music page*/
   .music_main_content h1 {
@@ -1087,14 +1103,6 @@ button.ghost {
  
   .getInvolved-container{
     width: 690px;
-  }
-}
-
-/* Responsive, atehere kur screen eshte me i madh se 420 px me i stack nje mbi nje */
-@media only screen and (max-width: 420px) {
-  .music-left-container , .music-right-container {   
-    width: 100%;
-    padding: 0;
   }
 }
 
