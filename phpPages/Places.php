@@ -1,5 +1,10 @@
 <?php
 include '../phpFiles/header.php';
+include_once '../phpFiles/dbConfig.php';
+include '../phpFiles/userMapper.php';
+
+$result = new UserMapper();
+$result = $result -> getAllPlaces();
 ?>
 			
 			<div class="places-main-content">
@@ -14,34 +19,34 @@ include '../phpFiles/header.php';
 						<div class="otherPlaces">
 							<div class ="place_info"> 
 								<div class ="place_img">
-									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+									<img src ="<?php echo $result[0]['link'];?>" alt="<?php echo $result[0]['name'];?>">
 								</div>
-								<h3> City </h3>
-								<p>Lorem ispun</p>
+								<h3> <?php echo $result[0]['name'];?> </h3>
+								<p><?php echo $result[0]['description'];?></p>
 							</div>
 							
 							<div class ="place_info"> 
 								<div class ="place_img">
-									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+									<img src ="<?php echo $result[1]['link'];?>" alt="<?php echo $result[1]['name'];?>">
 								</div>
-								<h3> City </h3>
-								<p>Lorem ispun</p>
+								<h3> <?php echo $result[1]['name'];?> </h3>
+								<p><?php echo $result[1]['description'];?></p>
 							</div>
 							
 							<div class ="place_info"> 
 								<div class ="place_img">
-									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+									<img src ="<?php echo $result[2]['link'];?>" alt="<?php echo $result[2]['name'];?>">
 								</div>
-								<h3> City </h3>
-								<p>Lorem ispun</p>
+								<h3> <?php echo $result[2]['name'];?> </h3>
+								<p><?php echo $result[2]['description'];?></p>
 							</div>
 							
 							<div class ="place_info"> 
 								<div class ="place_img">
-									<img src ="http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg" alt="Prishtina">
+									<img src ="<?php echo $result[3]['link'];?>" alt="<?php echo $result[3]['name'];?>">
 								</div>
-								<h3> City </h3>
-								<p>Lorem ispun</p>
+								<h3> <?php echo $result[3]['name'];?> </h3>
+								<p><?php echo $result[3]['description'];?></p>
 							</div>
 						</div>
 					</div>
