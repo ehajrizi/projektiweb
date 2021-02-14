@@ -1,5 +1,11 @@
 <?php
 include '../phpFiles/header.php';
+include_once '../phpFiles/dbConfig.php';
+include '../phpFiles/userMapper.php';
+
+$result = new UserMapper();
+$result = $result -> getAllBooks();
+
 ?>
             
             <div class ="books-main-content">
@@ -9,13 +15,13 @@ include '../phpFiles/header.php';
 					<div class="card">
 						<header class="article-header">
 							<div class="book-pic">
-								<img src="../gjuv.jpg">
+								<img src="<?php echo $result[0]['foto'];?>"/>
 							</div>
-							<h3 class="article-title"><a href="https://www.goodreads.com/book/show/223666.The_General_of_the_Dead_Army?from_search=true&from_srp=true&qid=hvVBVXeTWJ&rank=12">The General of The Dead Army</a></h3>
+							<h3 class="article-title"><a href="<?php echo $result[0]['linku'];?>"><?php echo $result[0]['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name">Ismail Kadare</div>
+							<div class="name"><?php echo $result[0]['autori'];?></div>
 						</div>
 						
 					</div>
@@ -23,27 +29,27 @@ include '../phpFiles/header.php';
 					<div class="card">
 						<header class="article-header">
 							<div class="book-pic">
-								<img src="../lumi.jpg">
+								<img src="<?php echo $result[1]['foto'];?>">
 							</div>
 							<br>
-							<h3 class="article-title"><a href="https://www.goodreads.com/book/show/15846260-lumi-i-vdekur">The Dead River</a></h3>
+							<h3 class="article-title"><a href="<?php echo $result[1]['linku'];?>"><?php echo $result[1]['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name">Jakov Xoxa</div>
+							<div class="name"><?php echo $result[1]['autori'];?></div>
 						</div>
 					</div>
 
 					<div class="card">
 						<header class="article-header">
 							<div class="book-pic">
-								<img src="../kg.jpg">
+								<img src="<?php echo $result[2]['foto'];?>">
 							</div>
-							<h3 class="article-title"><a href="https://www.goodreads.com/book/show/708124.Chronicle_in_Stone?from_search=true&from_srp=true&qid=0ZDXuwVMfm&rank=1">Chronicle in Stone</a></h3>
+							<h3 class="article-title"><a href="<?php echo $result[2]['linku'];?>"><?php echo $result[2]['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name">Ismail Kadare</div>
+							<div class="name"><?php echo $result[2]['autori'];?></div>
 						</div>
 
 					</div>
@@ -51,26 +57,26 @@ include '../phpFiles/header.php';
 					<div class="card">
 						<header class="article-header">
 							<div class="book-pic">
-								<img src="../std.jpg">
+								<img src="<?php echo $result[3]['foto'];?>">
 							</div>
-							<h3 class="article-title"><a href="https://www.goodreads.com/book/show/13615770-if-i-were-a-boy">If I Were A Boy</a></h3>
+							<h3 class="article-title"><a href="<?php echo $result[3]['linku'];?>"><?php echo $result[3]['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name">Haki Stermilli</div>
+							<div class="name"><?php echo $result[3]['autori'];?></div>
 						</div>
 					</div>
 
 					<div class="card">
 						<header class="article-header">
 							<div class="book-pic">
-								<img src="../dor.jpg">
+								<img src="<?php echo $result[4]['foto'];?>">
 							</div>
-							<h3 class="article-title"><a href="https://www.goodreads.com/book/show/223668.Doruntine">Doruntine</a></h3>
+							<h3 class="article-title"><a href="<?php echo $result[4]['linku'];?>"><?php echo $result[4]['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name">Ismail Kadare</div>
+							<div class="name"><?php echo $result[4]['autori'];?></div>
 						</div>
 
 					</div>
@@ -78,13 +84,13 @@ include '../phpFiles/header.php';
 					<div class="card">
 						<header class="article-header">
 							<div class="book-pic">
-								<img src="../pod.jpg">
+								<img src="<?php echo $result[5]['foto'];?>">
 							</div>
-							<h3 class="article-title"><a href="https://www.goodreads.com/book/show/797635.The_Palace_of_Dreams?ac=1&from_search=true&qid=qb7BrCW2uz&rank=1">The Palace of Dreams</a></h3>
+							<h3 class="article-title"><a href="<?php echo $result[5]['linku'];?>"><?php echo $result[5]['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name">Ismail Kadare</div>
+							<div class="name"><?php echo $result[5]['autori'];?></div>
 						</div>
 					</div>
 				</div>
