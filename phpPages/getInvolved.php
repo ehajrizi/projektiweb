@@ -8,7 +8,7 @@ include '../phpFiles/header.php';
 			<h2 class="getInvolved-h2">Get Involved and Share Your Experiences!</h2>
 			<div class="getInvolved-container" id="gIcontainer">
 				<div class="form-container sign-up-container">
-					<form name="myform" class="gI-form" action="../phpFiles/dataVerify.php" method="post" onsubmit="return validate()">
+					<form name="myform" class="gI-form" action="../phpFiles/dataVerify.php" method="post">
 						<h1 class="getInvolved-h1">Create Account</h1>
 						<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 						<div class="social-container">
@@ -24,7 +24,7 @@ include '../phpFiles/header.php';
 					</form>
 				</div>
 				<div class="form-container sign-in-container">
-					<form name="myform" class="gI-form" action="../phpFiles/dataVerify.php" method="post" onsubmit="return validate()">
+					<form name="myform" class="gI-form" action="../phpFiles/dataVerify.php" method="post">
 						<h1 class="getInvolved-h1">Log in</h1>
 						<div class="social-container">
 							<a href="https://www.facebook.com/" class="social" class="gI-a"><i class="fab fa-facebook-f"></i></a>

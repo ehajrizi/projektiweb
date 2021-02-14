@@ -10,7 +10,22 @@
     <body>
       <div class="background">  
         <div class="home-header">
-          <a href="getInvolved.php">Get involved</a>
+		<?php
+				session_start();
+				if(isset($_SESSION['roli']) && $_SESSION['roli'] == 1):
+		  ?>
+          <a href="../phpFiles/dashboard.php">Dashboard</a>
+		  <?php
+				endif;
+		  ?>
+		  
+		  <?php
+				if(isset($_SESSION['roli'])):
+		  ?>
+		  <a href="../phpFiles/logout.php">Log out</a>
+		  <?php else:?>
+		  <a href="getInvolved.php">Get involved</a>
+		  <?php endif; ?>
 
           <div class="home-dropdown">
             <button class="home-dropbtn">Discover
@@ -25,7 +40,6 @@
 
           <a href="aboutUs.php">About Us</a>
           <a href="home.php">Home</a>
-          
         </div>
         
         <div class="home-main-content">

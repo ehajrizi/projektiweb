@@ -41,7 +41,7 @@
                 <div class="contactUs-container">
                     <h1>Contact Us</h1>
                      <div class="column">
-                        <form name="formCU" id=" formCU" action="../phpFiles/cu_dataVerify.php" method="post" onsubmit="return validate()">
+                        <form name="formCU" id=" formCU" action="../phpFiles/cu_dataVerify.php" method="post">
                             <label for="fname">First Name</label>
                             <input type="text" id="fname" name="firstname" placeholder="Your name..">
                             <label for="lname">Last Name</label>

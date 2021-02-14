@@ -1,4 +1,5 @@
 <?php
+require 'dbConfig.php';
 include_once 'adminClass.php';
 include_once 'simpleUserClass.php';
 include_once 'userMapper.php';
@@ -11,7 +12,7 @@ if(isset ($_POST['loginbtn'])){
 	$register = new RegisterLogic($_POST);
 	$register -> insertData();
 }else{
-	header("Location:../phpPages/getInvolved.php");
+	header("Location:../phpPages/home.php");
 }
 
 class LoginLogic{
@@ -31,10 +32,10 @@ class LoginLogic{
         } else if ($this->usernameAndPasswordCorrect($this->username, $this->password)) {
             echo '2';
             header('Location:../phpPages/home.php');
-        } else {
-            echo '3';
+        } else{
+			echo '3';
             header("Location:../phpPages/getInvolved.php");
-        }
+		}
 	}
 	
 	private function variablesNotDefinedWell($username, $password){
@@ -53,10 +54,10 @@ class LoginLogic{
 		}
         else if (password_verify($password, $user['password'])) {
             if ($user['role'] == 1) {
-                $obj = new Admin($user['id'], $user['username'], $user['password'], $user['role']);
+                $obj = new Admin($user['userid'],$user['name'], $user['username'], $user['password'],$user['email'], $user['role']);
                 $obj->setSession();
             } else {
-                $obj = new SimpleUser($user['id'], $user['username'], $user['password'], $user['role']);
+                $obj = new SimpleUser($user['userid'],$user['name'], $user['username'], $user['password'],$user['email'], $user['role']);
                 $obj->setSession();
             }
             return true;

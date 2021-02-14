@@ -4,9 +4,9 @@ include_once 'userMapper.php';
 if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     $mapper =  new UserMapper();
     $userList = $mapper->getAllUsers();
-	//header("Location:../phpFiles/dashboard.php");
+	header("Location:/phpFiles/dashboard.php");
 } else {
-    header("Location:../phpPages/getInvolved.php");
+    header("Location:/phpPages/home.php");
 }
 ?>
 <!DOCTYPE html>

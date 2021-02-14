@@ -1098,3 +1098,261 @@ button.ghost {
   }
 }
 
+/* Responsive, per devices iphone 6/7/8 portrait and landscape*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  {
+  .header,.home-header{
+    height:50px;
+    padding: 10px;
+    font-size:12px;
+  }
+  .dropdown .dropbtn,.home-dropdown .home-dropbtn{
+    font-size: 12px;
+  }
+  .all-backgound{
+    overflow-x: hidden;
+    height:100vh;
+  }
+    
+  footer{
+    height: 60px;
+  }
+  
+  footer p{
+    font-size: 9px;
+  }
+    /*Rrethat ku ndodhen ikonat*/
+  .social-media .icon span{
+    height: 25px;
+    width: 25px;
+    margin: 0px;
+  }
+  /*Ikonat qe i trajtojme si i */
+    .social-media .icon span i{
+    font-size:10px;
+    line-height:7px; /*distanca vertikale*/
+  }
+  /*HOME*/
+    .home-main-content{
+    margin: 100px 0px;
+    position:fixed;
+  }
+  .home-main-content h2,p{
+    font-size:55px;
+  }
+  /*ABOUT US*/
+  .aboutUs-container{
+    background-repeat:no-repeat;
+    background-size:300px;
+    background-position: top;
+    overflow:hidden;
+    letter-spacing:0px;
+    padding:20px 0;
+    width:95%;
+    height:450px;
+    float:center;
+  }
+  .aboutUs-inner-container{
+    width:50%;
+    height:200px;
+    float:center;
+    background-color:#e8f4d5 ;
+    padding:150px;
+  }
+  .aboutUs-inner-container h1{
+    margin-bottom: 1px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+   
+  }
+  .text{
+    font-size: 10px;
+    color:#617087 ;
+    line-height:10px;
+    text-align: justify;
+    margin-bottom: 20px;
+  
+  }
+  .aboutUs-inner-container{
+    width:80%;
+    height:50px;
+    float:center;
+    background-color:#e8f4d5 ;
+    padding:150px;
+  }
+  .aboutUs-inner-container h1{
+    margin-bottom: 0px;
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+  }
+  .text{
+    font-size: 10px;
+    color:#617087 ;
+    line-height:20px;
+    text-align: justify;
+    margin-bottom: 0px;
+ 
+  
+  }
+  .contactUs-container{
+    width:100%;
+    float:center;
+    padding:10px;
+  }
+  .contactUs-container h1{
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+  }
+  input[type=text], textarea {
+    width: 250px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    position:center;
+  }
+  .column {
+    float: center;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  
+  /*BOOKS*/
+  .books-main-content{
+    text-align: center;
+    background-color: #e8dbc1;
+  
+  }
+
+  .books-main-content h1{
+    padding-top: 30px;
+    font-size:23px;
+
+  }
+
+  .scrolling-wrapper{
+    width: 80%;
+    margin:0 auto;
+    display: flex;
+    background-color: #e8dbc1;
+    padding: 3rem;
+  }
+
+  .card {
+    min-width: 200px;
+    height: 350px;
+
+  }
+
+  /*Per mos-overflow nga cards afer*/
+  .card:not(:first-child) {
+    margin-left: -130px;
+  }
+
+  .card:hover {
+    transform: translateY(-1rem);
+  }
+ 
+
+  .books-main-content img {
+    padding: 1px;
+    width: 130px;
+    height: 180px
+  
+  }
+
+
+
+/*butoni see all*/
+  #see-all{
+    border-radius: 20px;
+    border: 1px solid #F7DC6F;
+    background-color: #F7DC6F;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+
+  /*PLACES*/
+  .places-main-content img{
+    margin: 10% auto; 
+    display: flex;
+  }
+    
+  .column {
+    width: 50%;
+  }
+  .places img{
+	  width: 250px;
+	  height: 150px;
+	  
+  }
+
+  .map{
+    width: 100%;
+    float: center;
+    padding: 10px;
+  } 
+  
+  .otherPlaces{
+	width: 40%;
+    float: left;
+    padding: 10px;
+  }
+  
+ 
+  
+  .place_info{
+	width: 40%;
+        padding: 5px;
+  }
+  
+
+  /*Music page*/
+  .music_main_content h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+    
+  /*GET INVOLVED*/
+  /*qe mos te paraqitet opsioni scroll*/
+  .login-body{
+	  position:fixed;
+  }
+  /*pozicionohet sipas 'prindit' gi-main-content ose login-body*/
+  .getInvolved-h2{
+	/*margin: 20px 30px 30px 0px;*/
+    position: absolute;
+    top: 100px;
+    font-size: 40px;
+  }
+ 
+  .getInvolved-container{
+    width: 690px;
+  }
+  .music-left-container , .music-right-container {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
