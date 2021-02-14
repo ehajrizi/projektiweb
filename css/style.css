@@ -789,40 +789,46 @@ button.ghost {
 }
 
 /*Places*/
-  .places-main-content h1{
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 32px;
-	text-align: center;
-  }
-  
-  .places img{
-	  width: 200px;
-	  height: 150px;
-  }
+.places-main-content img{
+	/*margin: 10px auto 20px;*/
+    display: block;
+	margin-left: auto;
+	margin-right:auto;
+}
 
-  .map{
-    width: 60%;
-    float: left;
-    padding: 10px;
-  } 
+
+.places-main-content .row {
+  display: flex;
+  margin: 20px;
+}
+
+.places-main-content .column {
+  flex: 33.33%;
+  padding: 25px;
+}
+.places-main-content .column .map {
+  width: 60%;
+  float: left;
+  padding: 10px;
+}
   
-  .otherPlaces{
+.places-main-content .column .otherPlaces{
 	width: 40%;
-    float: left;
-    padding: 10px;
-  }
+  float: left;
+  padding: 10px;
+}
   
-  .map p{
-	 text-align: center; 
-  }
+.places-main-content .column .map p{
+	text-align: center; 
+}
   
-  .place_info{
+.places-main-content .column.place_info{
 	width: 40%;
-    float: left;
-    padding: 5px;
-  }
+  float: left;
+  padding: 5px;
+}
   
-  /*Music page*/
+/*Music page*/
 .music_main_content{
   margin-top:10%
 }
@@ -878,8 +884,69 @@ button.ghost {
   width:120px;
   height:120px;
   padding:10px;
+
 }
 
+ 
+/*Music page*/
+.music_main_content{
+  margin-top:10px;
+}
+.music_main_content h1 {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.music_artists{
+  display:flex;
+  text-align: center;
+  width:auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.music_artists .artist_info{
+  background: cornsilk;
+  margin:5px;
+  padding: 20px;
+  margin-bottom: 50px;
+  width:300px;
+  line-height: 20px;
+  color:darkgreen;
+  position: relative;
+
+}
+.music_artists .artist_info h3 {
+  color:darkorange;
+  font-size:26px;
+  margin-top: 50px;
+
+   
+}
+.music_artists .artist_info p.role{
+  color: #ccc;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 12px 0;
+
+}
+.music_artists .artist_info .artist_info_img  {
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  position:absolute;
+  top: -50px;
+  left:50%;
+  transform: translate(-50%);
+    
+}
+.music_artists .artist_info .artist_info_img img {
+  width:100px;
+  height:100px;
+  padding:10px;
+
+}
+/*responsive per ipad*/
 @media only screen and (max-width: 1024px){
 
   .header,.home-header{
@@ -1085,68 +1152,7 @@ button.ghost {
   .getInvolved-container{
     width: 690px;
   }
-
-
 }
-/*Music page*/
-.music_main_content{
-  margin-top:10%
-}
-.music_main_content h1 {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  font-size: 52px;
-  margin-bottom: 60px;
-  text-align: center;
-}
-.music_artists{
-  display:flex;
-  text-align: center;
-  width:auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.music_artists .artist_info{
-  background: cornsilk;
-  margin:5px;
-  padding: 20px;
-  margin-bottom: 50px;
-  width:300px;
-  line-height: 20px;
-  color:darkgreen;
-  position: relative;
-
-}
-.music_artists .artist_info h3 {
-  color:darkorange;
-  font-size:26px;
-  margin-top: 50px;
-
-   
-}
-.music_artists .artist_info p.role{
-  color: #ccc;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin: 12px 0;
-
-}
-.music_artists .artist_info .artist_info_img  {
-  width:100px;
-  height:100px;
-  border-radius: 50%;
-  position:absolute;
-  top: -50px;
-  left:50%;
-  transform: translate(-50%);
-    
-}
-.music_artists .artist_info .artist_info_img img {
-  width:100px;
-  height:100px;
-  padding:10px;
-
-}
-
 
 /* Responsive, atehere kur screen eshte me i madh se 420 px me i stack nje mbi nje */
 @media only screen and (max-width: 420px) {
@@ -1155,10 +1161,4 @@ button.ghost {
     padding: 0;
   }
 }
-
-
-
-
-
-
 
