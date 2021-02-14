@@ -828,66 +828,7 @@ button.ghost {
   padding: 5px;
 }
   
-/*Music page*/
-.music_main_content{
-  margin-top:10%
-}
-.music_main_content h1 {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  font-size: 52px;
-  margin-bottom: 60px;
-  text-align: center;
-}
-.music_artists{
-  display:flex;
-  text-align: center;
-  width:auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.music_artists .artist_info{
-  background: cornsilk;
-  margin:5px;
-  padding: 20px;
-  margin-bottom: 50px;
-  width:300px;
-  line-height: 20px;
-  color:darkgreen;
-  position: relative;
 
-}
-.music_artists .artist_info h3 {
-  color:darkorange;
-  font-size:26px;
-  margin-top: 50px;
-
-   
-}
-.music_artists .artist_info p.role{
-  color: #ccc;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin: 12px 0;
-
-}
-.music_artists .artist_info .artist_img  {
-  width:100px;
-  height:100px;
-  border-radius: 50%;
-  position:absolute;
-  top: -50px;
-  left:50%;
-  transform: translate(-50%);
-    
-}
-.music_artists .artist_info .artist_img img {
-  width:120px;
-  height:120px;
-  padding:10px;
-
-}
-
- 
 /*Music page*/
 .music_main_content{
   margin-top:10px;
