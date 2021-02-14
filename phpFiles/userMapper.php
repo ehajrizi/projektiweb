@@ -1,7 +1,7 @@
 <?php
 require_once 'dbConfig.php';
 
-class UserMapper extends DatabaseDBOConfiguration{
+class UserMapper extends DatabasePDOConfiguration{
 	
 	private $conn;
 	private $query;
@@ -59,7 +59,7 @@ class UserMapper extends DatabaseDBOConfiguration{
 	
 	public function insertUser(\SimpleUser $user)
     {
-        $this->query = "insert into webusers (name, username, password, email, role) values (:name, :username, :pass, :email, :role)";
+        $this->query = "insert into webusers (name, username, password, email, role) values (:name, :username, :pass, :email,:role)";
         $statement = $this->conn->prepare($this->query);
 		$name = $user->getName();
         $username = $user->getUsername();
@@ -69,7 +69,7 @@ class UserMapper extends DatabaseDBOConfiguration{
         $statement->bindParam(":name", $name);
         $statement->bindParam(":username", $username);
         $statement->bindParam(":pass", $pass);
-        $statement->bindParam(":email", $email);
+		$statement->bindParam(":email", $email);
         $statement->bindParam(":role", $role);
         $statement->execute();
     }
