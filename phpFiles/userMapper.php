@@ -95,5 +95,21 @@ class UserMapper extends DatabasePDOConfiguration{
 		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
 		return $result;
 	}
+	
+	public function getAllPlaces(){
+		$this -> query = "select *  from places";
+		$statement = $this->conn-> prepare($this -> query);
+		$statement -> execute();
+		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
+	
+	public function getAllArtists(){
+		$this -> query = "select *  from music";
+		$statement = $this->conn-> prepare($this -> query);
+		$statement -> execute();
+		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
 }
 ?>
