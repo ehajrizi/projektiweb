@@ -34,7 +34,7 @@
                     <div class="aboutUs-inner-container">
                         <h1>About Us</h1>
                         <p class="text">
-                            Lorem Ipsum is simply dummy text 
+                            We seek to bring people closer to their roots, inform those who want to know more
                         </p>
                     </div>
                 </div>

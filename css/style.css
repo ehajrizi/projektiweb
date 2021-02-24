@@ -882,6 +882,57 @@ button.ghost {
   padding:10px;
 
 }
+
+
+/*DASHBOARD*/
+.dashboard_body h1{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+.dashb_list h2{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.dashb_list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+table {
+    margin: 20px;
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px;
+}
+
+th,td {
+	padding: 15px;
+	background-color: #5b5251;
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+table a{
+  color: darkseagreen;
+}
+
+table a:active {
+    color: #fff;
+}
+
+table a:focus {
+    color:#fff;
+    outline: none;
+}
 /*/////////////////////////////////////////////////////////////////////*/
 /*responsive per ipad*/
 @media only screen and (max-width: 768px){

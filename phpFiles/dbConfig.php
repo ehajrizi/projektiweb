@@ -5,7 +5,7 @@ class DatabasePDOConfiguration{
 	private $connection;
 	
 	private $host = "localhost";
-	private $dbname = "projektiweb";
+	private $dbname = "projektiweb-1";
 	private $username = "root";
 	private $password = "";
 	
