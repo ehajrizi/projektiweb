@@ -1,4 +1,3 @@
-
 * {
  
   box-sizing: border-box;
@@ -243,7 +242,7 @@ body{
   float:right;
 
   background-color:#e8f4d5 ;
-  padding:150px;
+  padding:60px;
  
 }
 .aboutUs-inner-container h1{
@@ -269,8 +268,9 @@ body{
   padding:10px;
 }
 .contactUs-container h1{
-  margin-bottom: 30px;
-  font-size: 25px;
+  margin-bottom: 5px;
+  margin-top :5px;
+  font-size: 20px;
   font-weight: 800;
   text-align: left;
 }
@@ -791,25 +791,32 @@ button.ghost {
 /*Places*/
   .places-main-content h1{
 	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 32px;
+	font-size: 25px;
 	text-align: center;
+  
   }
   
   .places img{
 	  width: 200px;
 	  height: 150px;
+    position: center;
+  
   }
+  
 
   .map{
-    width: 60%;
-    float: left;
+    width: 100%;
+    float: center;
     padding: 10px;
   } 
   
   .otherPlaces{
-	width: 40%;
-    float: left;
+	  width: 40%;
+    float: center;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   
   .map p{
@@ -817,12 +824,70 @@ button.ghost {
   }
   
   .place_info{
-	width: 40%;
-    float: left;
+    margin:10px;
+	  width: 40%;
+    float: center;
     padding: 5px;
+
+  }
+  .place_info h3 {
+    font-size: 20px;
+    text-align:left;
+  }
+
+  .place_img {
+    align-content: center;
   }
   
-  
+  /*DASHBOARD*/
+.dashboard_body h1{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+.dashb_list h2{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.dashb_list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+table {
+    margin: 20px;
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px;
+}
+
+th,td {
+	padding: 15px;
+	background-color: #5b5251;
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+table a{
+  color: darkseagreen;
+}
+
+table a:active {
+    color: #fff;
+}
+
+table a:focus {
+    color:#fff;
+    outline: none;
+}
 
 /*Music page*/
 .music_main_content{
@@ -882,57 +947,6 @@ button.ghost {
   padding:10px;
 
 }
-
-
-/*DASHBOARD*/
-.dashboard_body h1{
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
-  font-size: 30px;
-}
-
-.dashb_list h2{
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
-  font-size: 25px;
-}
-
-.dashb_list {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-table {
-    margin: 20px;
-	width: 800px;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px;
-}
-
-th,td {
-	padding: 15px;
-	background-color: #5b5251;
-	color: #fff;
-}
-
-th {
-	text-align: left;
-}
-
-table a{
-  color: darkseagreen;
-}
-
-table a:active {
-    color: #fff;
-}
-
-table a:focus {
-    color:#fff;
-    outline: none;
-}
 /*/////////////////////////////////////////////////////////////////////*/
 /*responsive per ipad*/
 @media only screen and (max-width: 768px){
@@ -951,9 +965,8 @@ table a:focus {
   }
   
   footer{
-     height: 100px;
+    height: 100px;
   }
-
   footer p{
     font-size: 15px;
   }
@@ -974,46 +987,52 @@ table a:focus {
     position:fixed;
   }
   /*ABOUT US*/
+  
+  
   .aboutUs-container{
     background-repeat:no-repeat;
-    background-size:700px;
+    background-size:500px;
     background-position: center;
     overflow:hidden;
     letter-spacing:1px;
     padding:100px 0;
-    width:95%;
+    width:47%;
     height:100hv;
     float:center;
   }
   .aboutUs-inner-container{
-    width:80%;
+    width:60%;
     height:500px;
     float:center;
     background-color:#e8f4d5 ;
-    padding:150px;
-  }
-  .aboutUs-inner-container h1{
-    margin-bottom: 30px;
-    font-size: 20px;
-    font-weight: 900;
+    padding:30px;
+ 
+
+  } 
+  .contactUs-container h1{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 800;
     text-align: center;
   }
   .text{
-    font-size: 12px;
+    font-size: 10px;
     color:#617087 ;
     line-height:20px;
     text-align: justify;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   
   }
   .contactUs-container{
-    width:100%;
+    width:53%;
     float:center;
     padding:20px;
   }
   .contactUs-container h1{
-    margin-bottom: 30px;
-    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top:10px;
+    font-size: 20px;
     font-weight: 800;
     text-align: center;
   }
@@ -1098,9 +1117,9 @@ table a:focus {
     transition: transform 80ms ease-in;
   }
 
-  /*PLACES*/
-  .places-main-content img{
-    margin: 10% auto; 
+   /*PLACES*/
+   .places-main-content img{
+    margin:10px; 
     display: flex;
   }
     
@@ -1108,8 +1127,9 @@ table a:focus {
     width: 50%;
   }
   .places img{
-	  width: 250px;
-	  height: 150px;
+	  width: 270px;
+	  height: 230px;
+    padding:10px;
 	  
   }
 
@@ -1120,22 +1140,25 @@ table a:focus {
   } 
   
   .otherPlaces{
-	width: 40%;
-    float: left;
-    padding: 10px;
+	  width: 100%;
+    float: center;
+    padding: 5px;
   }
   
  
   
   .place_info{
-	width: 40%;
-        padding: 5px;
+	 width: 40%;
+     padding: 5px;
   }
-  
+  .place_info h3 {
+    font-size: 15px;
+    text-align:center;
+  }
 
   /*Music page*/
   .music_main_content h1 {
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
   }
     
@@ -1156,7 +1179,6 @@ table a:focus {
     width: 690px;
   }
 }
-
 /* Responsive, per devices iphone 6/7/8 portrait and landscape*/
 @media only screen 
   and (min-device-width: 375px) 
@@ -1205,21 +1227,21 @@ table a:focus {
   /*ABOUT US*/
   .aboutUs-container{
     background-repeat:no-repeat;
-    background-size:300px;
+    background-size:280px;
     background-position: top;
     overflow:hidden;
     letter-spacing:0px;
     padding:20px 0;
     width:95%;
-    height:450px;
+    height:300px;
     float:center;
   }
   .aboutUs-inner-container{
-    width:50%;
-    height:200px;
+    width:40%;
+    height:160px;
     float:center;
     background-color:#e8f4d5 ;
-    padding:150px;
+    padding:60px;
   }
   .aboutUs-inner-container h1{
     margin-bottom: 1px;
@@ -1228,67 +1250,75 @@ table a:focus {
     text-align: center;
    
   }
-  .text{
-    font-size: 10px;
-    color:#617087 ;
-    line-height:10px;
-    text-align: justify;
-    margin-bottom: 20px;
+    .text{
+      font-size: 10px;
+      color:#617087 ;
+      line-height:10px;
+      text-align: justify;
+      margin-bottom: 20px;
+    
+    }
+    .aboutUs-inner-container{
+      width:80%;
+      height:50px;
+      float:center;
+      background-color:#e8f4d5 ;
+      padding:60px;
+    }
+    .aboutUs-inner-container h1{
+      margin-bottom: 0px;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .text{
+      font-size: 10px;
+      color:#617087 ;
+      line-height:20px;
+      text-align: justify;
+      margin-bottom: 0px;
+   
+    
+    }
+    .contactUs-container{
+      width:100%;
+      float:center;
+      padding:5px;
+    }
+    .contactUs-container h1{
+      margin-bottom: 0px;
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
+    }
+    input[type=text], textarea {
+      width: 200px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 5px;
+      resize: vertical;
+    }
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 10px;
+      position:center;
+    }
+    .column {
+      float: center;
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px;
+    }
+    .column , label {
+      font-size:12px;
+    }
+    .column , textarea #subject {
+      height:60px;
   
-  }
-  .aboutUs-inner-container{
-    width:80%;
-    height:50px;
-    float:center;
-    background-color:#e8f4d5 ;
-    padding:150px;
-  }
-  .aboutUs-inner-container h1{
-    margin-bottom: 0px;
-    font-size: 10px;
-    font-weight: 900;
-    text-align: center;
-  }
-  .text{
-    font-size: 10px;
-    color:#617087 ;
-    line-height:20px;
-    text-align: justify;
-    margin-bottom: 0px;
- 
-  
-  }
-  .contactUs-container{
-    width:100%;
-    float:center;
-    padding:10px;
-  }
-  .contactUs-container h1{
-    margin-bottom: 0px;
-    font-size: 15px;
-    font-weight: 800;
-    text-align: center;
-  }
-  input[type=text], textarea {
-    width: 250px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    position:center;
-  }
-  .column {
-    float: center;
-    width: 50%;
-    margin-top: 6px;
-    padding: 20px;
-  }
+    } 
+    
   
   
   /*BOOKS*/
@@ -1299,13 +1329,13 @@ table a:focus {
   }
 
   .books-main-content h1{
-    padding-top: 30px;
-    font-size:23px;
+    padding-top: 10px;
+    font-size:15px;
 
   }
 
   .scrolling-wrapper{
-    width: 80%;
+    width: 100%;
     margin:0 auto;
     display: flex;
     background-color: #e8dbc1;
@@ -1313,14 +1343,14 @@ table a:focus {
   }
 
   .card {
-    min-width: 200px;
-    height: 350px;
+    min-width: 180px;
+    height: 270px;
 
   }
 
   /*Per mos-overflow nga cards afer*/
   .card:not(:first-child) {
-    margin-left: -130px;
+    margin-left: -160px;
   }
 
   .card:hover {
@@ -1330,11 +1360,10 @@ table a:focus {
 
   .books-main-content img {
     padding: 1px;
-    width: 130px;
-    height: 180px
+    width: 90px;
+    height: 100px;
   
   }
-
 
 
 /*butoni see all*/
@@ -1343,55 +1372,73 @@ table a:focus {
     border: 1px solid #F7DC6F;
     background-color: #F7DC6F;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
-    padding: 12px 45px;
+    padding: 15px 25px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
   }
 
-  /*PLACES*/
-  .places-main-content img{
-    margin: 10% auto; 
-    display: flex;
-  }
+     /*PLACES*/
+     .places-main-content img{
+      margin:10px; 
+      display: flex;
+    }
+      
+    .places-main-content h1{
+      font-size:18px;
+    }
+    .column {
+      width: 50%;
+    }
+    .places img{
+      width: 270px;
+      height: 230px;
+      padding:10px;
+      
+    }
+  
+    .map{
+      width: 50%;
+      float: center;
+      padding: 10px;
+    } 
     
-  .column {
-    width: 50%;
-  }
-  .places img{
-	  width: 250px;
-	  height: 150px;
-	  
-  }
-
-  .map{
-    width: 100%;
-    float: center;
-    padding: 10px;
-  } 
-  
-  .otherPlaces{
-	width: 40%;
-    float: left;
-    padding: 10px;
-  }
-  
- 
-  
-  .place_info{
-	width: 40%;
-        padding: 5px;
-  }
-  
-
-  /*Music page*/
-  .music_main_content h1 {
-    font-size: 20px;
-    text-align: center;
-  }
+    .otherPlaces{
+      width: 50%;
+      float: center;
+      padding: 5px;
+    }
     
+   
+    
+    .place_info{
+     width: 40%;
+       padding: 5px;
+    }
+    .place_info h3 {
+      font-size: 15px;
+      text-align:center;
+    }
+    
+  
+
+ /*Music page*/
+ .music_main_content h1 {
+  font-size: 15px;
+  text-align: center;
+}
+.music_main_content .artist_info{
+  width:300px;
+  height:200px;
+}
+.music_main_content .artist_info h3 {
+  font-size:15px;
+  margin-top:25px;
+  margin-bottom:0px;
+
+}
   /*GET INVOLVED*/
   /*qe mos te paraqitet opsioni scroll*/
   .login-body{
@@ -1401,18 +1448,69 @@ table a:focus {
   .getInvolved-h2{
 	/*margin: 20px 30px 30px 0px;*/
     position: absolute;
-    top: 100px;
-    font-size: 40px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .getInvolved-h1{
+    font-size:20px;
   }
  
   .getInvolved-container{
-    width: 690px;
+    width: 350px;
+    height: 450px;
   }
-  .music-left-container , .music-right-container {   
-    width: 100%;
-    padding: 0;
+  .gI-form{
+    padding: 0 0px;
+   } 
+
+  .getInvolved-p{
+     font-size: 10px;
+     line-height: 20px;
+     letter-spacing: 0.1px;
+     margin: 5px 0 5px;
+
   }
+    .getInvolved-span{
+   font-size: 7px;
+  
+  }
+  .login-body a{
+   font-size: 10px;
+   margin: 5px 0;
+
+  } 
+    button.gI-button{
+  
+     font-size: 10px;
+     padding: 10px 25px;
+     letter-spacing: 0.5px;
+  
+
+  } 
+  button.ghost {
+     font-size: 10px;
+     padding: 10px 25px;
+     letter-spacing: 0.5px;
+
+   }
+  
+    .gI-input{
+
+     padding: 0px;
+     margin: 6px 0 16px;
+     font-size:10px;
+    }
+    #password1.gI-input,#password.gI-input,#email.gI-input{
+     height: 20px;
+     width: 150px;
+     padding: 0px;
+
+    }
+    #username.gI-input,#username1.gI-input,#name.gI-input {
+      height: 20px;
+      width: 150px;
+     
+    }
+    
+  
 }
-
-
-

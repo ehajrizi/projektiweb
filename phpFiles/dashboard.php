@@ -1,13 +1,14 @@
 <?php
-
+session_start();
 include_once 'userMapper.php';
-if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
+if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
     $mapper =  new UserMapper();
     $userList = $mapper->getAllUsers();
-	header("Location:/phpFiles/dashboard.php");
+	$contactList = $mapper->getAllContactData();
 } else {
-    header("Location:/phpPages/home.php");
+    header("Location:./phpPages/getInvolved.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +22,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     <body>
         <div class ="all-backgound">
             <div class="header">
+				<a href="../phpFiles/logout.php">Log Out</a>
+				<a href="../phpFiles/dashboard.php">Dashboard</a>
                 <a href="../phpPages/getInvolved.php">Get involved</a>
 
                 <div class="dropdown">
@@ -36,51 +39,50 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
 
                 <a href="../phpPages/aboutUs.php">About Us</a>
                 <a href="../phpPages/home.php">Home</a>
-                <a href="../phpFiles/dashboard.php">Dashboard</a>
+                
                 
             </div>
 
-
-<div>
-    <h1>This is the Dashboard page</h1>
-    <div>
-        <h2>User list:</h2>
-        <table>
+		
+<div class="dashboard_body">
+		<h1>Dashboard</h1>
+    <div class="dashb_list">
+        <h2>User list:</h2>		
+		<table class="dashboard_table">
             <thead>
                 <tr>
-                    <td>Emri</td>
-                    <td>Mbiemri</td>
+                    <td>Music</td>
+                    <td>Username</td>
                     <td>Email</td>
-                    <td>Detajet</td>
-                    <td>Modifiko</td>
-                    <td>Fshij</td>
+                    <td>Role</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
                 </tr>
             </thead>
             <tbody>
-                <?php
+				 <?php
                 foreach ($userList as $user) {
                 ?>
                     <tr>
+                        <td><?php echo $user['name']; ?></td>
                         <td><?php echo $user['username']; ?></td>
-                        <td><?php echo $user['userLastName']; ?></td>
-                        <td><?php echo $user['userEmail']; ?></td>
-                        <td><a href=<?php echo "../businessLogic/detailsUser.php?id=" . $user['userid']; //to be continued by students
-                                    ?>>Detajet</a></td>
-                        <td><a href=<?php echo "edit.php?id=" . $user['userid'];
-                                    ?>>Modifiko</td>
-                        <td><a href=<?php echo "deleteUser.php?id=" . $user['userid'];
-                                    ?>>Fshij</td>
+                        <td><?php echo $user['email']; ?></td>
+                        <td><?php echo $user['role']; ?></td>
+						<td><a href=<?php echo "edit.php?id=" . $user['userid'];
+                                    ?>>Edit</td>
+                        <td><a href=<?php echo "delUser.php?id=" . $user['userid'];
+                                    ?>>Delete</td>
                     </tr>
                 <?php
                 }
                 ?>
             </tbody>
         </table>
+		
+		
+
     </div>
 </div>
-
-
-
 
 <?php
 include 'footer.php'

@@ -1,8 +1,9 @@
 <?php
 include_once 'userMapper.php';
-if (isset($_GET['id'])) {
-    $userid = $_GET['id'];
+
+	$userId = $_GET['userid'];
     $mapper = new UserMapper();
     $mapper->deleteUser($userid);
-    header("Location:../phpFiles/dashboard.php");
-?>
+ header("Location:dashboard.php");
+
+

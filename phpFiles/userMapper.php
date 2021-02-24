@@ -36,24 +36,15 @@ class UserMapper extends DatabasePDOConfiguration{
 		return $result;
 	}
 	
-	public function deleteUser($userid){
-		$this -> query = "delete from webusers where userid = :userid";
-		$statement -> $this -> conn -> prepare($this -> query);
-		$statement -> bindParam(":username", $username);
-		$statement -> execute();	
-	}
 	
-	public function edit(\SimpleUser $user, $id)
+	public function edit(\SimpleUser $user, $userid)
     {
-        $this->query = "update webusers set username=:username, name=:name, email=:email where userid=:id";
+        $this->query = "update webusers set username=:username where userid=:id";
         var_dump($user);
         $statement = $this->conn->prepare($this->query);
         $username = $user->getUsername();
-        $name = $user->getName();
-        $email = $user->getEmail();
         $statement->bindParam(":username", $username);
-        $statement->bindParam(":name", $name);
-        $statement->bindParam(":id", $id);
+        $statement->bindParam(":userid", $userid);
         $statement->execute();
     }
 	
@@ -87,6 +78,14 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement->execute();
     }
 	
+	public function getAllContactData(){
+		$this -> query = "select *  from contact";
+		$statement = $this->conn-> prepare($this -> query);
+		$statement -> execute();
+		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
+	
 	
 	public function getAllBooks(){
 		$this -> query = "select *  from books";
@@ -110,5 +109,12 @@ class UserMapper extends DatabasePDOConfiguration{
 		$statement -> execute();
 		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
 		return $result;
+	}
+	
+		public function deleteUser($userid){
+		$this->query = "delete from webusers where userid=:userid";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> bindParam(":userid", $userid);
+		$statement -> execute();	
 	}
 }
