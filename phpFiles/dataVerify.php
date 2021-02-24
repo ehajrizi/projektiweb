@@ -21,8 +21,8 @@ class LoginLogic{
 	private $password = "";
 	
 	public function __construct($formData){
-		$this -> username = $formData['username'];
-		$this -> username = $formData['password'];
+		$this->username = $formData['username'];
+		$this->password = $formData['password'];
 	}
 	
 	public function verifyData(){
@@ -49,7 +49,7 @@ class LoginLogic{
         if ($user == null){
 			return false;
 		}
-        else if (password_verify($password, $user['password'])) {
+        else if (password_verify($password, $user['password'])){
             if ($user['role'] == 1) {
                 $obj = new Admin($user['userid'],$user['name'], $user['username'], $user['password'],$user['email'], $user['role']);
                 $obj->setSession();
@@ -62,6 +62,7 @@ class LoginLogic{
 			return false;
 		}
     }
+	
 }
 
 class RegisterLogic{

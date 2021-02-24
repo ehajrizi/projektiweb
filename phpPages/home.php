@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   
@@ -12,17 +12,17 @@
       <div class="background">  
         <div class="home-header">
 		<?php
-				if(isset($_SESSION["role"]) && $_SESSION["role"] == 1):
+				if(isset($_SESSION["role"])):
 		  ?>
-          <a href="../phpFiles/dashboard.php">Dashboard</a>
+          	<a href="../phpFiles/logout.php">Log out</a>
 		  <?php
 				endif;
 		  ?>
 		  
 		  <?php
-				if(isset($_SESSION['role'])):
+				if(isset($_SESSION["role"]) && $_SESSION["role"] == 1):
 		  ?>
-		  <a href="../phpFiles/logout.php">Log out</a>
+		  <a href="../phpFiles/dashboard.php">Dashboard</a>
 		  <?php else:?>
 		  <a href="getInvolved.php">Get involved</a>
 		  <?php endif; ?>
