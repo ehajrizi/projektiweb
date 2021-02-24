@@ -112,4 +112,3 @@ class UserMapper extends DatabasePDOConfiguration{
 		return $result;
 	}
 }
-?>

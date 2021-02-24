@@ -5,14 +5,14 @@ include_once 'simpleUserClass.php';
 include_once 'userMapper.php';
 session_start();
 
-if(isset ($_POST['loginbtn'])){
+if(isset($_POST['loginbtn'])){
 	$login = new LoginLogic($_POST);
-	$login -> verifyData();
+	$login->verifyData();
 }else if(isset($_POST['regbtn'])){
 	$register = new RegisterLogic($_POST);
-	$register -> insertData();
+	$register->insertData();
 }else{
-	header("Location:../phpPages/home.php");
+	header("Location:../phpPages/getInvolved.php");
 }
 
 class LoginLogic{
@@ -27,13 +27,10 @@ class LoginLogic{
 	
 	public function verifyData(){
 		if ($this->variablesNotDefinedWell($this->username, $this->password)) {
-            echo '1';
             header("Location:../phpPages/getInvolved.php");
         } else if ($this->usernameAndPasswordCorrect($this->username, $this->password)) {
-            echo '2';
-            header('Location:../phpPages/home.php');
+            header("Location:../phpPages/home.php");
         } else{
-			echo '3';
             header("Location:../phpPages/getInvolved.php");
 		}
 	}
@@ -49,7 +46,7 @@ class LoginLogic{
     {
         $mapper = new UserMapper();
         $user = $mapper->getUserByUsername($username);
-        if ($user == null || count($user) == 0){
+        if ($user == null){
 			return false;
 		}
         else if (password_verify($password, $user['password'])) {
