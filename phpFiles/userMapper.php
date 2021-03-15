@@ -44,7 +44,7 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement = $this->conn->prepare($this->query);
         $username = $user->getUsername();
         $statement->bindParam(":username", $username);
-        $statement->bindParam(":userid", $userid);
+        $statement->bindParam(":id", $userid);
         $statement->execute();
     }
 	

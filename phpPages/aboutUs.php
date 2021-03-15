@@ -9,7 +9,7 @@
     </head>
 	
     <body class="about">   
-        <div class ="all-backgound">
+        <div class ="all-backgound2">
             <div class="header">
                 <a href="../phpPages/getInvolved.php">Get involved</a>
 
@@ -48,7 +48,7 @@
                             <label for="lname">Last Name</label>
                             <input type="text" id="lname" name="lastname" placeholder="Your last name..">
                             <label for="subject">Subject</label>
-                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
                             <button id="submitbtn" name="submitbtn"> Submit </button>
                         </form>
                     </div>
@@ -57,7 +57,7 @@
                 </div>
 				</div>
             </div>
-
+        
             <script src="../jsFiles/script.js"></script>
 
 <?php

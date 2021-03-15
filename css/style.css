@@ -19,11 +19,15 @@ body{
   height:100vh;
   background-size:cover;
   animation: slide 15s infinite;
-  animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out;
 
 }
 /*div all-background prapavija per te gjitha faqet  */
 .all-backgound{
+  background-color: #e8dbc1;
+  height:100%;
+}
+.all-backgound2{
   background-color: #e8dbc1;
   height:100vh;
 }
@@ -788,6 +792,7 @@ button.ghost {
  width: 40px;
 }
 
+
 /*Places*/
   .places-main-content h1{
 	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -803,9 +808,13 @@ button.ghost {
   
   }
   
-
+  .places {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   .map{
-    width: 100%;
+    width: 50%;
     float: center;
     padding: 10px;
   } 
@@ -1178,6 +1187,43 @@ table a:focus {
   .getInvolved-container{
     width: 690px;
   }
+   
+      /*DASHBOARD*/
+      .dashboard_body h1{
+     
+        font-size: 30px;
+      }
+  
+      .dashb_list h2{
+   
+        font-size: 25px;
+      }
+  
+      .dashb_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      table {
+          margin: 20px;
+        width: 800px;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px;
+      }
+  
+      th,td {
+        padding: 15px;
+   
+      }
+  
+      th {
+        text-align: left;
+      }
+  
+
+
 }
 /* Responsive, per devices iphone 6/7/8 portrait and landscape*/
 @media only screen 
@@ -1227,40 +1273,20 @@ table a:focus {
   /*ABOUT US*/
   .aboutUs-container{
     background-repeat:no-repeat;
-    background-size:280px;
+    background-size:250px;
     background-position: top;
-    overflow:hidden;
+  
     letter-spacing:0px;
     padding:20px 0;
     width:95%;
     height:300px;
     float:center;
   }
-  .aboutUs-inner-container{
-    width:40%;
-    height:160px;
-    float:center;
-    background-color:#e8f4d5 ;
-    padding:60px;
-  }
-  .aboutUs-inner-container h1{
-    margin-bottom: 1px;
-    font-size: 12px;
-    font-weight: 900;
-    text-align: center;
-   
-  }
-    .text{
-      font-size: 10px;
-      color:#617087 ;
-      line-height:10px;
-      text-align: justify;
-      margin-bottom: 20px;
-    
-    }
+
+
     .aboutUs-inner-container{
       width:80%;
-      height:50px;
+      height:200px;
       float:center;
       background-color:#e8f4d5 ;
       padding:60px;
@@ -1292,7 +1318,7 @@ table a:focus {
       text-align: center;
     }
     input[type=text], textarea {
-      width: 200px;
+      width: 150px;
       padding: 6px;
       border: 1px solid #ccc;
       margin-top: 6px;
@@ -1319,8 +1345,6 @@ table a:focus {
   
     } 
     
-  
-  
   /*BOOKS*/
   .books-main-content{
     text-align: center;
@@ -1398,6 +1422,9 @@ table a:focus {
       padding:10px;
       
     }
+    .places p {
+      font-size:10px;
+    }
   
     .map{
       width: 50%;
@@ -1439,7 +1466,7 @@ table a:focus {
   margin-bottom:0px;
 
 }
-  /*GET INVOLVED*/
+    /*GET INVOLVED*/
   /*qe mos te paraqitet opsioni scroll*/
   .login-body{
 	  position:fixed;
@@ -1448,7 +1475,7 @@ table a:focus {
   .getInvolved-h2{
 	/*margin: 20px 30px 30px 0px;*/
     position: absolute;
-    top: 20px;
+    top: 15px;
     font-size: 20px;
   }
   .getInvolved-h1{
@@ -1456,8 +1483,8 @@ table a:focus {
   }
  
   .getInvolved-container{
-    width: 350px;
-    height: 450px;
+    width: 310px;
+    height: 400px;
   }
   .gI-form{
     padding: 0 0px;
@@ -1511,6 +1538,42 @@ table a:focus {
       width: 150px;
      
     }
-    
+        /*DASHBOARD*/
+    .dashboard_body h1{
+     
+      font-size: 30px;
+    }
+
+    .dashb_list h2{
+ 
+      font-size: 25px;
+    }
+
+    .dashb_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    table {
+        margin: 20px;
+      width: 800px;
+      border-collapse: collapse;
+      overflow: hidden;
+      box-shadow: 0 0 20px;
+    }
+
+    th,td {
+      padding: 15px;
+ 
+    }
+
+    th {
+      text-align: left;
+    }
+
+
+
+        
   
 }
