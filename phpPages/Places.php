@@ -40,6 +40,8 @@ $result = $result -> getAllPlaces();
 								<h3> <?php echo $result[2]['name'];?> </h3>
 								<p><?php echo $result[2]['description'];?></p>
 							</div>
+
+							<p>krejt pldh shume pldh haha ha ha habianjak</p>
 							
 							<div class ="place_info"> 
 								<div class ="place_img">

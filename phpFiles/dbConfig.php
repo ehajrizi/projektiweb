@@ -17,5 +17,6 @@ class DatabasePDOConfiguration{
 	protected function createConnection(){
 		$this -> connection = new PDO("mysql:host=$this->host;dbname=$this->dbname",$this->username,$this->password);
 		$this -> connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//me shtu edhe nje trycatch<<<<<<<<<<<<<
 	}
 }
