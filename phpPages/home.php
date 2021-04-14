@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Find your roots</title>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style2.css">
     </head>
     <body>
       <div class="background">  
@@ -14,7 +14,7 @@
 		<?php
 				if(isset($_SESSION["role"])):
 		  ?>
-          	<a href="../phpFiles/logout.php">Log out</a>
+          	<a href="../phpFiles/logout.php">Log Out</a>
 		  <?php
 				endif;
 		  ?>

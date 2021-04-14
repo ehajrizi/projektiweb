@@ -15,8 +15,7 @@ $result = $result -> getAllArtists();
                 <img src ="<?php echo $result[0]['foto'];?>" alt="<?php echo $result[0]['name'];?>">
             </div>
             <h3> <?php echo $result[0]['name'];?> </h3>
-            <p class="role"><?php echo $result[0]['role'];?></p>
-            <p><?php echo $result[0]['description'];?></p>
+            <p class="role"><?php echo $result[0]['description'];?></p>
 
         </div>
 
@@ -25,8 +24,7 @@ $result = $result -> getAllArtists();
                 <img src ="<?php echo $result[1]['foto'];?>" alt="<?php echo $result[1]['name'];?>">
             </div>
             <h3> <?php echo $result[1]['name'];?> </h3>
-            <p class="role"><?php echo $result[1]['role'];?></p>
-            <p><?php echo $result[1]['description'];?></p>
+            <p class="role"><?php echo $result[1]['description'];?></p>
 
         </div>
 
@@ -35,8 +33,7 @@ $result = $result -> getAllArtists();
                 <img src ="<?php echo $result[2]['foto'];?>" alt="<?php echo $result[2]['name'];?>">
             </div>
             <h3> <?php echo $result[2]['name'];?> </h3>
-            <p class="role"><?php echo $result[2]['role'];?></p>
-            <p><?php echo $result[2]['description'];?></p>
+            <p class="role"><?php echo $result[2]['description'];?></p>
 
         </div>
 
@@ -47,8 +44,7 @@ $result = $result -> getAllArtists();
                 <img src ="<?php echo $result[3]['foto'];?>" alt="<?php echo $result[3]['name'];?>">
             </div>
             <h3> <?php echo $result[3]['name'];?> </h3>
-            <p class="role"><?php echo $result[3]['role'];?></p>
-            <p><?php echo $result[3]['description'];?></p>
+            <p class="role"><?php echo $result[3]['description'];?></p>
 
         </div>
         
@@ -58,8 +54,7 @@ $result = $result -> getAllArtists();
                 <img src ="<?php echo $result[4]['foto'];?>" alt="<?php echo $result[4]['name'];?>">
             </div>
             <h3> <?php echo $result[4]['name'];?> </h3>
-            <p class="role"><?php echo $result[4]['role'];?></p>
-            <p><?php echo $result[4]['description'];?></p>
+            <p class="role"><?php echo $result[4]['description'];?></p>
 
         </div>    
         
@@ -68,8 +63,7 @@ $result = $result -> getAllArtists();
                 <img src ="<?php echo $result[5]['foto'];?>" alt="<?php echo $result[5]['name'];?>">
             </div>
             <h3> <?php echo $result[5]['name'];?> </h3>
-            <p class="role"><?php echo $result[5]['role'];?></p>
-            <p><?php echo $result[5]['description'];?></p>
+            <p class="role"><?php echo $result[5]['description'];?></p>
 
         </div>    
    </div>

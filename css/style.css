@@ -1,13 +1,22 @@
 * {
- 
   box-sizing: border-box;
   font-family: 'Popins', sans-serif;
+
+  /*height: 100%;*/
+
 }
+
+html, body {
+    height: 100%;
+    background-color: #e8dbc1;
+}
+
 body{
   margin: 0;
-  padding:0;
+/*padding:0;
   width:100%;
-  height:100%;
+  height:100%; */
+  height: 100%;
 }
 /*div background futen fotot per slide show ne prapavije  */
 .background {
@@ -16,11 +25,10 @@ body{
   background-color: #ebedcf;
   background-position: center;
   background-repeat:no-repeat;
-  height:100vh;
+  height:100%;
   background-size:cover;
   animation: slide 15s infinite;
   animation-timing-function: ease-in-out;
-
 }
 /*div all-background prapavija per te gjitha faqet  */
 .all-backgound{
@@ -29,14 +37,14 @@ body{
 }
 .all-backgound2{
   background-color: #e8dbc1;
-  height:100vh;
+  height:100%;
 }
-
 /*header i faqes Home pozicioni qe me ndejt vetem lart tere kohen */
 .home-header {
   position: sticky;
   top: 0;
   z-index:10;
+  display:flex;
  
  /* background-color:#ebedcf;*/
 }
@@ -233,20 +241,18 @@ body{
   background-position: center;
   overflow:hidden;
   letter-spacing:1px;
-  padding:160px 0;
   width:65%;
-  height:700px;
   float:left;
   padding:20px;
-  
-
+  height:80%;
 }
 .aboutUs-inner-container{
   width:50%;
   float:right;
-
   background-color:#e8f4d5 ;
   padding:60px;
+  height: 80%;
+  overflow: hidden;
  
 }
 .aboutUs-inner-container h1{
@@ -255,6 +261,12 @@ body{
   font-weight: 800;
   text-align: center;
 }
+
+.au_text{
+	height: 90%;
+	overflow:hidden;
+}
+
 .text{
   font-size: 12px;
   color:#617087 ;
@@ -279,13 +291,17 @@ body{
   text-align: left;
 }
 input[type=text], textarea {
-  width: 300px;
+  width: 280px;
   padding: 12px;
   border: 1px solid #ccc;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
 }
+
+/* textarea{
+	margin-left:80px;
+} */
 
 /*input[type=submit] {
   background-color: #7c6957;
@@ -306,7 +322,7 @@ input[type=text], textarea {
 
 .column {
   float: left;
-  width: 50%;
+  width: 100%;
   margin-top: 6px;
   padding: 20px;
 }
@@ -318,10 +334,32 @@ input[type=text], textarea {
   clear: both;
 }
 
+/*butoni submitbtn*/
+#submitbtn{
+ border-radius: 20px;
+ border: 1px solid black;
+ background-color: black;
+ color: #FFFFFF;
+ font-size: 12px;
+ font-weight: bold;
+ padding: 12px 45px;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ transition: transform 80ms ease-in;
+}
+
+#submitbtn:active {
+ transform: scale(0.95);
+}
+
+#submitbtn:focus {
+ outline: none;
+}
+
 
 /* rregullimi i pjeses se footerit  */
 footer {
-  position: fixed;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -450,6 +488,7 @@ footer p{
 }
 /*BOOKS*/
 .books-main-content{
+  height: 100%;
   text-align: center;
   background-color: #e8dbc1;
 }
@@ -460,8 +499,8 @@ footer p{
 
 /*div ku vendosen cards ne menyre horizontale*/
 .scrolling-wrapper{
-       width: 80%;
-   margin:0 auto;
+       width: 100%;
+       margin:0 auto;
        display: flex;
        background-color: #e8dbc1;
        padding: 3rem;
@@ -469,29 +508,30 @@ footer p{
 
 /* */
 .card {
-       min-width: 300px;
-       height: 380px;
-       border-radius: 16px;
-       background-color: #ebedcf;
-       box-shadow: -1rem 0 3rem #daa641;
-       display: flex;
-       flex-direction: column;
-       padding: 1.5rem;
-       transition: 0.2s;
-   }
+    width: 300px;
+    height: 380px;
+    border-radius: 16px;
+    background-color: #ebedcf;
+    box-shadow: -1rem 0 3rem #daa641;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    transition: 0.2s;
+    margin-left: 3em;
+}
 
 /*Per mos-overflow nga cards afer*/
-.card:not(:first-child) {
-       margin-left: -130px;
-}
+    .card:not(:first-child) {
+        margin-left: -130px;
+    }
 
-.card:hover {
-       transform: translateY(-1rem);
-   }
- 
-.card:hover~.card{
-   transform: translateX(130px);
-}
+    .card:hover {
+        transform: translateY(-1rem);
+    }
+
+        .card:hover ~ .card {
+            transform: translateX(130px);
+        }
 
 .books-main-content img {
  padding: 1px;
@@ -510,27 +550,166 @@ footer p{
  text-decoration: none;
 }
 
-/*butoni see all*/
-#see-all{
- border-radius: 20px;
- border: 1px solid #F7DC6F;
- background-color: #F7DC6F;
- color: #FFFFFF;
- font-size: 12px;
- font-weight: bold;
- padding: 12px 45px;
- letter-spacing: 1px;
- text-transform: uppercase;
- transition: transform 80ms ease-in;
+
+
+
+ul {
+    display: table-cell;
+    margin: 0 auto;
+    vertical-align: middle;
+  
 }
 
-#see-all:active {
- transform: scale(0.95);
+.list-inline {
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
 }
 
-#see-all:focus {
- outline: none;
+    .list-inline > li {
+        display: inline-block;
+        margin-bottom: 2em;
+    }
+
+        .list-inline > li:first-child {
+            margin-left: 0;
+        }
+
+
+.blist {
+    display: flex;
+    align-items: center;
+    height:100%;
+    width:100%;
 }
+
+#more {
+    display: none;
+}
+
+#myBtn,#addBtn,#addCom{
+    border-radius: 20px;
+    border: 1px solid darkorange;
+    background-color: darkorange;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+#last-card {
+    align-items: center;
+    padding-top: 160px;
+}
+
+
+#comments {
+    width:90%;
+    margin: 10px auto;
+    
+}
+
+  
+#bform {
+    width: 50%;
+    margin: 10px auto;
+}
+
+    #bform .divinp {
+        margin-top: 5px;
+    }
+
+#img_div {
+    width:80%;
+    padding:5px;
+    margin: 15px auto;
+   /* border: 1px solid #788571;*/
+}
+
+    #img_div:after {
+        content:"";
+        display: block;
+        clear:both;
+    }
+
+    #img_div img {
+        width: 200px;
+        height: 220px;
+    }
+
+
+
+#loga:link, #loga:visited {
+    background-color: darkorange;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#loga:hover, #loga:active {
+    background-color: darkorange;
+}
+
+/*BOOKDESC*/
+
+.section {
+    position:relative;
+    width:100%;
+    padding: 50px;
+}
+
+.image{
+    position: relative;
+    overflow: hidden;
+}
+
+.image.image1 {
+    width: 520px;
+    height:700px;
+    float:left;
+    margin:20px;
+    margin-left:200px;
+}
+
+    .image img {
+        width: 520px;
+        height: 700px;
+    }
+
+.imgtxt {
+    width:600px;
+    float: right;
+    margin-right:400px;
+}
+
+.bdesc {
+    height:520px;
+}
+.section p {
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.txta {
+    display:flex;
+    flex:row;
+}
+
+.a {
+    margin: 0px 80px 30px 0px;
+}
+
 
 /*LOGIN*/
 .login-body{
@@ -540,11 +719,16 @@ footer p{
  align-items: center;
  flex-direction: column;
  font-family: 'Montserrat', sans-serif;
- height: 100vh;
+ height: 100%;
  margin: -20px 0 50px;
  width: 100%;
+ overflow-y:hidden;
 }
 
+/*.getInvolved-main-content {
+    margin-bottom:230px;
+
+}*/
 .getInvolved-h1{
  color: #F7DC6F;
  font-weight: bold;
@@ -648,7 +832,7 @@ button.ghost {
 
 #password1.gI-input,#password.gI-input,#email.gI-input{
  height: 42px;
- width: 300px;
+ width: 280px;
  border: 1px solid #ccc;
 }
 .getInvolved-container{
@@ -956,6 +1140,9 @@ table a:focus {
   padding:10px;
 
 }
+
+
+
 /*/////////////////////////////////////////////////////////////////////*/
 /*responsive per ipad*/
 @media only screen and (max-width: 768px){
@@ -1308,8 +1495,8 @@ table a:focus {
     }
     .contactUs-container{
       width:100%;
-      float:center;
       padding:5px;
+	  height:250px;
     }
     .contactUs-container h1{
       margin-bottom: 0px;
@@ -1333,7 +1520,7 @@ table a:focus {
     }
     .column {
       float: center;
-      width: 50%;
+      width: 80%;
       margin-top: 6px;
       padding: 20px;
     }

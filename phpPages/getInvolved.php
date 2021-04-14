@@ -54,7 +54,7 @@ include '../phpFiles/header.php';
 			</div>
 		<script src="../jsFiles/main.js"></script>	
 	</div>
-		
+		</div>
 <?php
 include '../phpFiles/footer.php';
 ?>

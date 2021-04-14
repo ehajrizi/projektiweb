@@ -28,7 +28,8 @@ class SubmitLogic{
         $data = new ContactData($this->firstname, $this->lastname, $this->subject);
 
         $mapper = new UserMapper();
-        $mapper->insertContactData($data);
+       if(!empty($this->firstname) && !empty($this->lastname) && !empty($this->subject)){
+        $mapper->insertContactData($data);}
         header("Location:../phpPages/aboutUs.php");
     }
 }

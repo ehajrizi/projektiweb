@@ -117,4 +117,44 @@ class UserMapper extends DatabasePDOConfiguration{
 		$statement -> bindParam(":userid", $userid);
 		$statement -> execute();	
 	}
+
+	public function deleteContact($contactid){
+		$this->query = "delete from contact where contactid=:contactid";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> bindParam(":contactid", $contactid);
+		$statement -> execute();	
+	}
+
+	public function deleteBook($bookid){
+		$this->query = "delete from books where bookid=:bookid";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> bindParam(":bookid", $bookid);
+		$statement -> execute();	
+	}
+
+	public function deleteArtist($artistid){
+		$this->query = "delete from music where artistid=:artistid";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> bindParam(":artistid", $artistid);
+		$statement -> execute();	
+	}
+
+		public function deletePlace($placeid){
+		$this->query = "delete from places where placeid=:placeid";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> bindParam(":placeid", $placeid);
+		$statement -> execute();	
+	}
+	
+		public function getBookByTitle($titulli){
+		$this->query = "select * from books where titulli = ?";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> execute(array($titulli));
+		$book = $statement->fetchAll(PDO::FETCH_ASSOC);
+		return $book;
+		}
+
+
+
+
 }
