@@ -79,265 +79,35 @@ if(isset($_POST['upload'])){
 
 			<div class="blist">
 				<ul class='list-inline'>
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[0]['foto'];?>" onclick="location.href ='bookdesc.php';"
 
-	/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[0]['titulli'];?></a></h3>
+				<?php 
+                $result = array_chunk($result,1);
+
+                foreach ($result as $result) {
+                    echo "<li>";
+                    echo "<div class='card'>";
+                    foreach ($result as $item) {  ?>   
+						<header class='article-header'>
+						<div class='book-pic'>
+                        <img src="<?php echo $item['foto'];?>" onclick="location.href ='bookdesc.php';"/>
+						</div>
+						<h3 class="article-title"><a href="bookdesc.php"><?php echo $item['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[0]['autori'];?></div>
-						</div>
-						
-					</div>
-					  </li>
+							<div class="name"><?php echo $item['autori'];?></div>
+						</div><?php
+                    }
+                    echo "</div>";
+                    echo "</li>";
+                }
+               ?>
 
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[0]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[0]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[0]['autori'];?></div>
-						</div>
-						
-					</div>
-					  </li>
-
-					  <li>
-						<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[1]['foto'];?>" onclick="location.href ='bookdesc.php';" />
-							</div>
-							<br>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[1]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[1]['autori'];?></div>
-						</div>
-					</div>
-					  </li>
-
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-  
-						<li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[3]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[3]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[3]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[4]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[4]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[4]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  
-					 <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[5]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[5]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[5]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  
-					 <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  
-					  <span id="dots"></span><span id="more">
-					  
-
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					   <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					  <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-
-					    <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[2]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[2]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[2]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-
-					 <li>
-							<div class="card">
-						<header class="article-header">
-							<div class="book-pic">
-								<img src="<?php echo $result[5]['foto'];?>" onclick="location.href ='bookdesc.php';"/>
-							</div>
-							<h3 class="article-title"><a href="bookdesc.php"><?php echo $result[5]['titulli'];?></a></h3>
-						</header>
-						<div class="info">
-							<div class="caption">Author</div>
-							<div class="name"><?php echo $result[5]['autori'];?></div>
-						</div>
-
-					</div>
-					  </li>
-				  
-			</ul>
-			<p>dfghjkdgfhjkljhgfhjkl;jhgjkl;</p>
-			
-			</div>
-
-			</div>
-						<button onclick="myFunction()" id="myBtn">See more</button>
-
+			   <?php if(isset($_SESSION["role"]) && $_SESSION["role"]==1):?>
+			   <br>
+			   <button id="adbut"><a href="../phpFiles/addbooks.php">Add Book</a></button>
+			   <?php endif;?>
+	
 			<h3>Comments:</h3>
 				
 			<div id="comments">
@@ -398,4 +168,4 @@ if(isset($_POST['upload'])){
 			</script>
 <?php
 include '../phpFiles/footer.php';
-?>
+?> 

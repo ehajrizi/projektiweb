@@ -2,11 +2,11 @@
 include_once '../phpFiles/dbConfig.php';
 include '../phpFiles/userMapper.php'; 
 
-if(!empty($_GET['titulli'])){
-	$titulli = $_REQUEST['titulli'];
+if(isset($_SESSION['titulli'])){
+	$titulli = $_GET['titulli'];
 	$books = new UserMapper();
 	$book = $books->getBookByTitle($titulli);
-  }
+ }
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,7 @@ if(!empty($_GET['titulli'])){
             
 			<div class="section">
 				<div class="image image1">
-					<img src="<?php echo $book[0]['foto'];?>">
+					<img src="<?php echo $book[0]['foto'];?>"/>
 				</div>
 
 				<div class="imgtxt">

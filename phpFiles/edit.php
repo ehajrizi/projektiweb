@@ -13,8 +13,10 @@ if (isset($_GET['id'])) {
     <form class="mainForm" action="editUpdate.php" method="get">
         <div class="login forms form-style">
             <input type="text" name="id" style="display:none;" value=<?php echo $userid; ?>. />
+            <label for="">Name:</label>
+            <input type="text" name="name" class="input" placeholder="name..."/><br>
             <label for="">Username:</label>
-            <input type="text" name="username" class="input" placeholder="username..."/>
+            <input type="text" name="username" class="input" placeholder="username..."/><br>
 			 <button type="submit">Enter</button>
         </div>
     </form>

@@ -27,6 +27,15 @@ class UserMapper extends DatabasePDOConfiguration{
 		$result = $statement -> fetch(PDO::FETCH_ASSOC);
 		return $result;
 	}
+
+	public function getUserByName($name){
+		$this -> query = "select * from webusers where name = :name";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":name",$name);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
 	
 	public function getAllUsers(){
 		$this -> query = "select *  from webusers";
@@ -85,6 +94,25 @@ class UserMapper extends DatabasePDOConfiguration{
 		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
 		return $result;
 	}
+
+	public function insertBookData(\BookData $data)
+    {
+        $this->query = "insert into books (titulli, foto, autori, pershkrimi, isbn, pagenr) values (:titulli, :foto, :autori, :pershkrimi, :isbn, :pagenr)";
+        $statement = $this->conn->prepare($this->query);
+		$titulli = $data->getTitulli();
+        $foto = $data->getFoto();
+        $autori = $data->getAutori();
+        $pershkrimi = $data->getPershkrimi();
+        $isbn = $data->getISBN();
+        $pagenr = $data->getPagenr();
+        $statement->bindParam(":titulli", $titulli);
+        $statement->bindParam(":foto", $lastname);
+        $statement->bindParam(":autori", $autori);
+        $statement->bindParam(":pershkrimi", $pershkrimi);
+        $statement->bindParam(":isbn", $isbn);
+        $statement->bindParam(":pagenr", $pagenr);
+        $statement->execute();
+    }
 	
 	
 	public function getAllBooks(){
@@ -147,9 +175,10 @@ class UserMapper extends DatabasePDOConfiguration{
 	}
 	
 		public function getBookByTitle($titulli){
-		$this->query = "select * from books where titulli = ?";
+		$this->query = "select * from books where titulli = :titulli";
 		$statement = $this->conn->prepare($this->query);
-		$statement -> execute(array($titulli));
+		$statement -> bindParam(":titulli",$titulli);
+		$statement -> execute();
 		$book = $statement->fetchAll(PDO::FETCH_ASSOC);
 		return $book;
 		}
