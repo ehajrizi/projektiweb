@@ -48,11 +48,17 @@ class UserMapper extends DatabasePDOConfiguration{
 	
 	public function edit(\SimpleUser $user, $userid)
     {
-        $this->query = "update webusers set username=:username where userid=:id";
+        $this->query = "update webusers set username=:username,name=:name,email=:email,role=:role where userid=:id";
         var_dump($user);
         $statement = $this->conn->prepare($this->query);
         $username = $user->getUsername();
+        $name = $user->getName();
+        $email = $user->getEmail();
+        $role = $user->getRole();
         $statement->bindParam(":username", $username);
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":email", $email);
+        $statement->bindParam(":role", $role);
         $statement->bindParam(":id", $userid);
         $statement->execute();
     }
@@ -183,14 +189,7 @@ class UserMapper extends DatabasePDOConfiguration{
 		return $book;
 		}
 
-		public function getAllSongs(){
-			$this -> query = "select songname from songgenerator";
-			$statement = $this -> conn -> prepare($this -> query);
-			$statement -> execute();
-			$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
-			return $result;
-		}
-		
+	
 
 
 

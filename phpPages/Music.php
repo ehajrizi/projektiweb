@@ -6,8 +6,6 @@ include '../phpFiles/userMapper.php';
 $result = new UserMapper();
 $result = $result -> getAllArtists();
 
-$song = new UserMapper();
-$song = $song-> getAllSongs();
 
 ?>
 <div class="music_main_content">
@@ -74,8 +72,10 @@ $song = $song-> getAllSongs();
    
 
 </div>
+
+
  
-   
+
 
 
 
