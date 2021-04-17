@@ -54,7 +54,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
 		<table class="dashboard_table">
             <thead>
                 <tr>
-                    <td>Music</td>
+                    <td>Name</td>
                     <td>Username</td>
                     <td>Email</td>
                     <td>Role</td>
