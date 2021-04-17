@@ -154,6 +154,15 @@ class UserMapper extends DatabasePDOConfiguration{
 		return $book;
 		}
 
+		public function getAllSongs(){
+			$this -> query = "select songname from songgenerator";
+			$statement = $this -> conn -> prepare($this -> query);
+			$statement -> execute();
+			$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+			return $result;
+		}
+		
+
 
 
 
