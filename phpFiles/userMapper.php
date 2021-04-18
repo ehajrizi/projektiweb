@@ -211,6 +211,14 @@ class UserMapper extends DatabasePDOConfiguration{
 		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
 		return $result;
 	}
+
+	public function getAllComments(){
+		$this -> query = "select *  from images";
+		$statement = $this->conn-> prepare($this -> query);
+		$statement -> execute();
+		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
 	
 		public function deleteUser($userid){
 		$this->query = "delete from webusers where userid=:userid";
@@ -244,6 +252,13 @@ class UserMapper extends DatabasePDOConfiguration{
 		$this->query = "delete from places where placeid=:placeid";
 		$statement = $this->conn->prepare($this->query);
 		$statement -> bindParam(":placeid", $placeid);
+		$statement -> execute();	
+	}
+
+	public function deleteComment($id){
+		$this->query = "delete from images where id=:id";
+		$statement = $this->conn->prepare($this->query);
+		$statement -> bindParam(":id", $id);
 		$statement -> execute();	
 	}
 	

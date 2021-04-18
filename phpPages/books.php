@@ -112,7 +112,7 @@ if(isset($_POST['upload'])){
 						<textarea name="text" cols="40" rows="4" placeholder="Add a Comment..."></textarea>
 					</div>
 					<div class="divinp">
-						<input type="submit" name="upload" value="Upload Image">
+						<input type="submit" name="upload" id="upload" value="Upload Image">
 					</div>
 				</form>
 				<?php

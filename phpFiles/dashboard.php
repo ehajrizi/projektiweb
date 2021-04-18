@@ -8,6 +8,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
 	$bookList = $mapper->getAllBooks();
 	$musicList = $mapper->getAllArtists();
 	$placesList = $mapper->getAllPlaces();
+    $comments = $mapper->getAllComments();
 } else {
     header("Location:./phpPages/getInvolved.php");
 }
@@ -116,6 +117,35 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><a href=<?php echo "editBook.php?id=" . $book['bookid'];
                                     ?>>Edit</td>
                         <td><a href=<?php echo "delBook.php?id=" . $book['bookid'];
+                                    ?>>Delete</td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+      <div class="dashb_list">
+        <h2>Comments list:</h2>		
+		<table class="dashboard_table">
+            <thead>
+                <tr>
+                    <td>Image</td>
+                    <td>Comment</td>
+                    <td>Written by</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+				 <?php
+                foreach ($comments as $comment) {
+                ?>
+                    <tr>
+                        <td><?php echo $comment['image']; ?></td>
+                        <td><span><?php echo $comment['text']; ?></span></td>
+                        <td><?php echo $comment['written_by']; ?></td>
+                        <td><a href=<?php echo "delComment.php?id=" . $comment['id'];
                                     ?>>Delete</td>
                     </tr>
                 <?php
