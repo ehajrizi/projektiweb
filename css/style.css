@@ -402,6 +402,15 @@ input[type=text], textarea {
   
 }
 
+.dashb_list span {
+
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
 /* rregullimi i pjeses se footerit  */
 footer {
   position: sticky;

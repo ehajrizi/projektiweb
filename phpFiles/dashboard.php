@@ -72,7 +72,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <tr>
                         <td><?php echo $contact['firstname']; ?></td>
                         <td><?php echo $contact['lastname']; ?></td>
-                        <td><?php echo $contact['subject']; ?></td>
+                        <td><span><?php echo $contact['subject']; ?></span></td>
                         <td><a href=<?php echo "delContact.php?id=" . $contact['contactid'];
                                     ?>>Delete</td>
                     </tr>
@@ -109,7 +109,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $book['titulli']; ?></td>
                         <td><?php echo $book['foto']; ?></td>
                         <td><?php echo $book['autori']; ?></td>
-                        <td><?php echo $book['pershkrimi']; ?></td>
+                        <td><span><?php echo $book['pershkrimi']; ?></span></td>
                         <td><?php echo $book['pagenr']; ?></td>
                         <td><?php echo $book['created_by']; ?></td>
                         <td><?php echo $book['edited_by']; ?></td>
@@ -146,9 +146,9 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                 ?>
                     <tr>
                         <td><?php echo $music['name']; ?></td>
-                        <td><?php echo $music['description']; ?></td>
+                        <td><span><?php echo $music['description']; ?></span></td>
                         <td><?php echo $music['foto']; ?></td>
-                        <td><?php echo $music['link']; ?></td>
+                        <td><span><?php echo $music['link']; ?></span></td>
                         <td><?php echo $music['created_by']; ?></td>
                         <td><?php echo $music['edited_by']; ?></td>
                         <td><a href=<?php echo "editMusic.php?id=" . $music['artistid'];
@@ -183,8 +183,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                 ?>
                     <tr>
                         <td><?php echo $place['name']; ?></td>
-                        <td><?php echo $place['description']; ?></td>
-                        <td><?php echo $place['link']; ?></td>
+                        <td><span><?php echo $place['description']; ?></span></td>
+                        <td><span><?php echo $place['link']; ?></span></td>
                         <td><?php echo $place['created_by']; ?></td>
                         <td><?php echo $place['edited_by']; ?></td>
                         <td><a href=<?php echo "editPlace.php?id=" . $place['placeid'];
