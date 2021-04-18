@@ -197,7 +197,7 @@ class UserMapper extends DatabasePDOConfiguration{
 	}
 	
 	public function getAllPlaces(){
-		$this -> query = "select *  from places";
+		$this -> query = "select * from places";
 		$statement = $this->conn-> prepare($this -> query);
 		$statement -> execute();
 		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
@@ -214,6 +214,14 @@ class UserMapper extends DatabasePDOConfiguration{
 
 	public function getAllComments(){
 		$this -> query = "select *  from images";
+		$statement = $this->conn-> prepare($this -> query);
+		$statement -> execute();
+		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
+	public function getAllActivities(){
+		$this -> query = "select *  from activities";
 		$statement = $this->conn-> prepare($this -> query);
 		$statement -> execute();
 		$result = $statement -> fetchAll(PDO::FETCH_ASSOC);

@@ -5,10 +5,12 @@ include '../phpFiles/userMapper.php';
 
 $result = new UserMapper();
 $result = $result -> getAllPlaces();
+$activitiesMap = new UserMapper();
+$activites = $activitiesMap->getAllActivities();
 ?>
 			
 	<div class="places-main-content">
-		<h1>Tourist Atractions</h1>
+		<h1>Tourist Attractions</h1>
 				
 			<div class="places-left">
 				<div class="map">
@@ -50,28 +52,19 @@ $result = $result -> getAllPlaces();
 		
 		    </div>
 
+			<h3>Activities in Kosovo</h3>
 
-			
-
-
-
-					
-
-							
+			<div class="main_activity">	
+			<div class="row_activity">
 					<?php 
-						$result = array_chunk($result,1);
+						$activitiesMap = array_chunk($activites,1);
 
-						foreach ($result as $result) {
-						echo "<div class='main_activity'>";
-						echo "<div class='row_activity'>";
+						foreach ($activitiesMap as $activites) {
 						echo "<div class='box_activity'>";
-						foreach ($result as $item) {  ?>   
-
-
-									  
-						<img src ="<?php echo $item['act_img'];?>" alt="<?php echo $item['name_act'];?>">	
+						foreach ($activites as $item) {  ?>   
 
 						<div class="activity_content">
+						<img src ="<?php echo $item['act_img'];?>" alt="<?php echo $item['name_act'];?>">
 							<h3><?php echo $item['name_act'];?></h3>
 												
 							<p><?php echo $item['description_act'];?></p> 
@@ -82,13 +75,11 @@ $result = $result -> getAllPlaces();
 					<?php
 						}  
 						echo "</div>";
-						echo "</div>";
-						echo "</div>";
-										
+			
 						}
 					?>
-
-			
+			</div>
+			</div>
 
 			
 	
@@ -98,7 +89,7 @@ $result = $result -> getAllPlaces();
 		<?php endif;?>
 
 					   
-					
+	</div>				
 	</div>
 			
 <?php
