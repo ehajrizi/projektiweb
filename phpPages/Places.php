@@ -18,79 +18,45 @@ $result = $result -> getAllPlaces();
 						</div>				
 					   <div class="places-right">
 						   <div class="places-slider">
+
+
+								<?php 
+								$result = array_chunk($result,1);
+
+									foreach ($result as $result) {
+									echo " <div class='places-slider-item'>";
+										foreach ($result as $item) {  ?>   
+
+
+									  
+											<img src ="<?php echo $item['link'];?>" alt="<?php echo $item['name'];?>">	
+
+											<div class="places-slider-item-text">
+												<h1><?php echo $item['name'];?></h1>
+												
+												<p><?php echo $item['description'];?></p> 
+
+											</div>
+
+								<?php
+											}  
+											echo "</div>";
+										
+										}
+								?>
+
+
+							</div>
 		
-								<div class="places-slider-item">
-									<img src ="<?php echo $result[0]['link'];?>" alt="<?php echo $result[0]['name'];?>">	
-
-									<div class="places-slider-item-text">
-										<h1><?php echo $result[0]['name'];?></h1>
-										
-										<p><?php echo $result[0]['description'];?></p> 
-
-									</div>
-
-								</div>
-								<div class="places-slider-item">
-									<img src ="<?php echo $result[1]['link'];?>" alt="<?php echo $result[1]['name'];?>">
-
-									<div class="places-slider-item-text">
-										<h1><?php echo $result[1]['name'];?></h1>
-										
-										<p><?php echo $result[1]['description'];?></p> 
-
-									</div>
-
-								</div>
-								<div class="places-slider-item">
-									<img src ="<?php echo $result[2]['link'];?>" alt="<?php echo $result[2]['name'];?>">	
-
-									<div class="places-slider-item-text">
-										<h1><?php echo $result[2]['name'];?></h1>
-										
-										<p><?php echo $result[2]['description'];?></p> 
-
-									</div>
-
-								</div>
-
-    				  		 </div>
 					   </div>
 						
-					   <!--<div class="otherPlaces">
-							<div class ="place_info"> 
-								<div class ="place_img">
-									<img src ="<?php echo $result[0]['link'];?>" alt="<?php echo $result[0]['name'];?>">
-								</div>
-								<h3> <?php echo $result[0]['name'];?> </h3>
-								<p><?php echo $result[0]['description'];?></p>
-							</div>
-							
-							<div class ="place_info"> 
-								<div class ="place_img">
-									<img src ="<?php echo $result[1]['link'];?>" alt="<?php echo $result[1]['name'];?>">
-								</div>
-								<h3> <?php echo $result[1]['name'];?> </h3>
-								<p><?php echo $result[1]['description'];?></p>
-							</div>
-							
-							<div class ="place_info"> 
-								<div class ="place_img">
-									<img src ="<?php echo $result[2]['link'];?>" alt="<?php echo $result[2]['name'];?>">
-								</div>
-								<h3> <?php echo $result[2]['name'];?> </h3>
-								<p><?php echo $result[2]['description'];?></p>
-							</div>
 
+					   <?php if(isset($_SESSION["role"]) && $_SESSION["role"]==1):?>
+			   <br>
+			   <button id="places_button"><a class="linkbtn" href="../phpFiles/addPlaces.php?>">Add Place</a></button>
+			   <?php endif;?>
 
-							
-							<div class ="place_info"> 
-								<div class ="place_img">
-									<img src ="<?php echo $result[3]['link'];?>" alt="<?php echo $result[3]['name'];?>">
-								</div>
-								<h3> <?php echo $result[3]['name'];?> </h3>
-								<p><?php echo $result[3]['description'];?></p>
-							</div>
-						</div> -->
+					   
 					
 			</div>
 			

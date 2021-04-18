@@ -12,66 +12,44 @@ $result = $result -> getAllArtists();
     <h1> Artists </h1>
         
    <div class= "music_artists" >
-        <div class ="artist_info"> 
-            <div class ="artist_img">
-                <img src ="<?php echo $result[0]['foto'];?>" alt="<?php echo $result[0]['name'];?>">
-            </div>
-            <h3> <?php echo $result[0]['name'];?> </h3>
-            <p class="role"><?php echo $result[0]['description'];?></p>
 
-        </div>
+   <?php 
+                $result = array_chunk($result,1);
 
-        <div class ="artist_info"> 
-            <div class ="artist_img">
-                <img src ="<?php echo $result[1]['foto'];?>" alt="<?php echo $result[1]['name'];?>">
-            </div>
-            <h3> <?php echo $result[1]['name'];?> </h3>
-            <p class="role"><?php echo $result[1]['description'];?></p>
+                foreach ($result as $result) {
+                   echo "<div class ='artist_info'>";
+                    foreach ($result as $item) {  ?>   
 
-        </div>
 
-        <div class ="artist_info"> 
-            <div class ="artist_img">
-                <img src ="<?php echo $result[2]['foto'];?>" alt="<?php echo $result[2]['name'];?>">
-            </div>
-            <h3> <?php echo $result[2]['name'];?> </h3>
-            <p class="role"><?php echo $result[2]['description'];?></p>
+                        <div class ="artist_img">
+                             <img src ="<?php echo $item['foto'];?>" alt="<?php echo $item['name'];?>">
+                        </div>
+                        <h3> <?php echo $item['name'];?> </h3>
+                        <p class="role"><?php echo $item['description'];?></p>  
+                        <?php
 
-        </div>
 
-        
 
-        <div class ="artist_info"> 
-            <div class ="artist_img">
-                <img src ="<?php echo $result[3]['foto'];?>" alt="<?php echo $result[3]['name'];?>">
-            </div>
-            <h3> <?php echo $result[3]['name'];?> </h3>
-            <p class="role"><?php echo $result[3]['description'];?></p>
 
-        </div>
-        
 
-        <div class ="artist_info"> 
-            <div class ="artist_img">
-                <img src ="<?php echo $result[4]['foto'];?>" alt="<?php echo $result[4]['name'];?>">
-            </div>
-            <h3> <?php echo $result[4]['name'];?> </h3>
-            <p class="role"><?php echo $result[4]['description'];?></p>
-
-        </div>    
-        
-        <div class ="artist_info"> 
-            <div class ="artist_img">
-                <img src ="<?php echo $result[5]['foto'];?>" alt="<?php echo $result[5]['name'];?>">
-            </div>
-            <h3> <?php echo $result[5]['name'];?> </h3>
-            <p class="role"><?php echo $result[5]['description'];?></p>
-
-        </div>    
+					
+                    }  
+                    echo "</div>";
+                   
+                }
+               ?>
+     
+         
    </div>
    
 
+   <?php if(isset($_SESSION["role"]) && $_SESSION["role"]==1):?>
+			   <br>
+			   <button id="music_button"><a class="linkbtn" href="../phpFiles/addMusic.php?>">Add Artist</a></button>
+			   <?php endif;?>
+
 </div>
+
 
 
  

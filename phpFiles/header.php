@@ -11,9 +11,25 @@
     </head>
 	
     <body>
-        <div class ="all-backgound">
+     
             <div class="header">
-                <a href="../phpPages/getInvolved.php">Get involved</a>
+
+				<?php
+					if(isset($_SESSION["role"])):
+				?>
+          		<a href="../phpFiles/logout.php">Log Out</a>
+				<?php
+					endif;
+				?>
+		  
+				<?php
+					if(isset($_SESSION["role"]) && $_SESSION["role"] == 1):
+				?>
+				<a href="../phpFiles/dashboard.php">Dashboard</a>
+				<?php else:?>
+				<a href="getInvolved.php">Get involved</a>
+				<?php endif; ?>
+        
 
                 <div class="dropdown">
                 <button class="dropbtn">Discover

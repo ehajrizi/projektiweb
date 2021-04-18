@@ -152,7 +152,10 @@ class UserMapper extends DatabasePDOConfiguration{
 
 	public function editArtist(\MusicData $artist, $artistid)
     {
-        $this->query = "update music set name=:name,description=:description,foto=:foto where artistid=:id";
+		session_start();
+        $username = $_SESSION['username'];
+
+        $this->query = "update music set name=:name,description=:description,foto=:foto,edited_by=:edited_by where artistid=:id";
         var_dump($artist);
         $statement = $this->conn->prepare($this->query);
         $name = $artist->getName();
@@ -162,12 +165,16 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement->bindParam(":description", $description);
         $statement->bindParam(":foto", $foto);
         $statement->bindParam(":id", $artistid);
-        $statement->execute();
+		$statement->bindParam(":edited_by", $username);
+	        $statement->execute();
     }
 
 	public function editPlace(\PlaceData $place, $placeid)
     {
-        $this->query = "update places set name=:name,description=:description,link=:link where placeid=:id";
+		session_start();
+        $username = $_SESSION['username'];
+
+        $this->query = "update places set name=:name,description=:description,link=:link,edited_by=:edited_by where placeid=:id";
         var_dump($place);
         $statement = $this->conn->prepare($this->query);
         $name = $place->getName();
@@ -177,6 +184,7 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement->bindParam(":description", $description);
         $statement->bindParam(":link", $link);
         $statement->bindParam(":id", $placeid);
+		$statement->bindParam(":edited_by", $username);
         $statement->execute();
     }
 	
@@ -273,6 +281,27 @@ class UserMapper extends DatabasePDOConfiguration{
 		$result = $statement -> fetch(PDO::FETCH_ASSOC);
 		return $result;
 	}
+
+	public function insertPlace(\PlaceData $place)
+    {
+		session_start();
+        $username = $_SESSION['username'];
+
+
+        $this->query = "insert into places (name,description,link,created_by) values (:name, :description, :link, :created_by)";
+        $statement = $this->conn->prepare($this->query);
+		$name = $place->getName();
+		$description = $place->getDescription();
+		$link = $place->getLink();
+     
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":description", $description);
+        $statement->bindParam(":link", $link);
+		$statement->bindParam(":created_by", $username);
+    
+        $statement->execute();
+    }
+
 
 
 

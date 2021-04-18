@@ -174,6 +174,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <td>Artist Name</td>
                     <td>Artist Description</td>
                     <td>Artist Photo</td>
+                    <td>Created By</td>
+                    <td>Edited By</td>
                     <td>Edit</td>
                     <td>Delete</td>
                 </tr>
@@ -186,6 +188,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $music['name']; ?></td>
                         <td><?php echo $music['description']; ?></td>
                         <td><?php echo $music['foto']; ?></td>
+                        <td><?php echo $music['created_by']; ?></td>
+                        <td><?php echo $music['edited_by']; ?></td>
                         <td><a href=<?php echo "editMusic.php?id=" . $music['artistid'];
                                     ?>>Edit</td>
                         <td><a href=<?php echo "delArtist.php?id=" . $music['artistid'];
@@ -206,6 +210,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <td>Place</td>
                     <td>Place Description</td>
                     <td>Place Link</td>
+                    <td>Created By</td>
+                    <td>Edited By</td>
                     <td>Edit</td>
                     <td>Delete</td>
                 </tr>
@@ -218,6 +224,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $place['name']; ?></td>
                         <td><?php echo $place['description']; ?></td>
                         <td><?php echo $place['link']; ?></td>
+                        <td><?php echo $place['created_by']; ?></td>
+                        <td><?php echo $place['edited_by']; ?></td>
                         <td><a href=<?php echo "editPlace.php?id=" . $place['placeid'];
                                     ?>>Edit</td>
                         <td><a href=<?php echo "delPlace.php?id=" . $place['placeid'];
