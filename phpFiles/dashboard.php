@@ -20,14 +20,23 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Find your roots</title>
         <link rel="stylesheet" href="../css/style.css">
+
+</script>
     </head>
 	
     <body>
         <div class ="all-backgound">
             <div class="header">
 				<a href="../phpFiles/logout.php">Log Out</a>
-				<a href="../phpFiles/dashboard.php">Dashboard</a>
-                <a href="../phpPages/getInvolved.php">Get involved</a>
+
+                <?php
+					if(isset($_SESSION["role"]) && $_SESSION["role"] == 1):
+				?>
+				<a href="dashboard.php">Dashboard</a>
+				<?php else:?>
+				<a href="../phpPages/getInvolved.php">Get involved</a>
+				<?php endif; ?>
+
 
                 <div class="dropdown">
                 <button class="dropbtn">Discover
@@ -126,6 +135,9 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <td>Author</td>
                     <td>Book Description</td>
                     <td>No. of Pages</td>
+                    <td>Created By</td>
+                    <td>Edited By</td>
+                    <td>Edit</td>
                     <td>Delete</td>
                 </tr>
             </thead>
@@ -140,6 +152,10 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $book['autori']; ?></td>
                         <td><?php echo $book['pershkrimi']; ?></td>
                         <td><?php echo $book['pagenr']; ?></td>
+                        <td><?php echo $book['created_by']; ?></td>
+                        <td><?php echo $book['edited_by']; ?></td>
+                        <td><a href=<?php echo "editBook.php?id=" . $book['bookid'];
+                                    ?>>Edit</td>
                         <td><a href=<?php echo "delBook.php?id=" . $book['bookid'];
                                     ?>>Delete</td>
                     </tr>
@@ -158,6 +174,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <td>Artist Name</td>
                     <td>Artist Description</td>
                     <td>Artist Photo</td>
+                    <td>Edit</td>
                     <td>Delete</td>
                 </tr>
             </thead>
@@ -169,6 +186,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $music['name']; ?></td>
                         <td><?php echo $music['description']; ?></td>
                         <td><?php echo $music['foto']; ?></td>
+                        <td><a href=<?php echo "editMusic.php?id=" . $music['artistid'];
+                                    ?>>Edit</td>
                         <td><a href=<?php echo "delArtist.php?id=" . $music['artistid'];
                                     ?>>Delete</td>
                     </tr>
@@ -187,6 +206,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <td>Place</td>
                     <td>Place Description</td>
                     <td>Place Link</td>
+                    <td>Edit</td>
                     <td>Delete</td>
                 </tr>
             </thead>
@@ -198,6 +218,8 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $place['name']; ?></td>
                         <td><?php echo $place['description']; ?></td>
                         <td><?php echo $place['link']; ?></td>
+                        <td><a href=<?php echo "editPlace.php?id=" . $place['placeid'];
+                                    ?>>Edit</td>
                         <td><a href=<?php echo "delPlace.php?id=" . $place['placeid'];
                                     ?>>Delete</td>
                     </tr>

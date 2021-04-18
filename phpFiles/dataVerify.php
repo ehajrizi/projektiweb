@@ -1,9 +1,10 @@
 <?php
+session_start();
 require 'dbConfig.php';
 include_once 'adminClass.php';
 include_once 'simpleUserClass.php';
 include_once 'userMapper.php';
-session_start();
+
 
 if(isset($_POST['loginbtn'])){
 	$login = new LoginLogic($_POST);
@@ -52,10 +53,10 @@ class LoginLogic{
         else if (password_verify($password, $user['password'])){
             if ($user['role'] == 1) {
                 $obj = new Admin($user['userid'],$user['name'], $user['username'], $user['password'],$user['email'], $user['role']);
-                $obj->setSession();
+                $obj->setSession($username);
             } else {
                 $obj = new SimpleUser($user['userid'],$user['name'], $user['username'], $user['password'],$user['email'], $user['role']);
-                $obj->setSession();
+                $obj->setSession($username);
             }
             return true;
         } else {

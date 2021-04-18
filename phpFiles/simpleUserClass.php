@@ -8,9 +8,10 @@ include_once 'userClass.php';
 		   parent::__construct($name, $username, $email, $password, $role);
 	   }
 	   
-	   public function setSession(){
+	   public function setSession($username){
 		   $_SESSION['role'] = 0;
 		   $_SESSION['roleName'] = "SimpleUser";
+		   $_SESSION['username'] = $username;
 	   }
 	   
 	   public function setCookie(){

@@ -1,8 +1,6 @@
 <?php
 include_once 'header.php';
-include_once 'bookClass.php';
 include_once 'userMapper.php';
-
 ?>
 <div class="contactUs-container">
         <h1>Add Book</h1>
@@ -21,10 +19,11 @@ include_once 'userMapper.php';
                 <input type="text" id="isbn" name="isbn" placeholder="ISBN.."><br>
                 <label for="pagenr">Page Number</label><br>
                 <input type="text" id="pagenr" name="pagenr" placeholder="Page Number.."><br>
-			    <input type="submit" name="submitbobtn" value="Upload Book">
+			    <input type="submit" id="submitbobtn" name="submitbobtn" value="Upload Book">
             </form>
         </div>
 </div>
+<script src="../jsFiles/book.js"></script>
 
 <?php include 'footer.php'; ?>
 

@@ -7,6 +7,8 @@
 		private $pershkrimi;
 		private $isbn;
 		private $pagenr;
+		private $created_by;
+        private $edited_by;
 	   
 	   public function __construct($titulli, $foto, $autori, $pershkrimi, $isbn, $pagenr){
 		   $this->titulli = $titulli;
@@ -15,6 +17,8 @@
 		   $this->pershkrimi = $pershkrimi;
 		   $this->isbn = $isbn;
 		   $this->pagenr = $pagenr;
+		   $this->created_by = '';
+		   $this->edited_by = '';
 	   }
 
 	   public function getTitulli(){
@@ -39,6 +43,14 @@
 
 	   public function getPagenr(){
 		   return $this -> pagenr;
+	   }
+
+	   public function getCreatedBy(){
+		   return $this -> created_by;
+	   }
+
+	   public function getEditedBy(){
+		   return $this -> edited_by;
 	   }
 
     }

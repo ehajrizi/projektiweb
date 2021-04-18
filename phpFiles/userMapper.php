@@ -48,11 +48,17 @@ class UserMapper extends DatabasePDOConfiguration{
 	
 	public function edit(\SimpleUser $user, $userid)
     {
-        $this->query = "update webusers set username=:username where userid=:id";
+        $this->query = "update webusers set username=:username,name=:name,email=:email,role=:role where userid=:id";
         var_dump($user);
         $statement = $this->conn->prepare($this->query);
         $username = $user->getUsername();
+        $name = $user->getName();
+        $email = $user->getEmail();
+        $role = $user->getRole();
         $statement->bindParam(":username", $username);
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":email", $email);
+        $statement->bindParam(":role", $role);
         $statement->bindParam(":id", $userid);
         $statement->execute();
     }
@@ -97,7 +103,11 @@ class UserMapper extends DatabasePDOConfiguration{
 
 	public function insertBookData(\BookData $data)
     {
-        $this->query = "insert into books (titulli, foto, autori, pershkrimi, isbn, pagenr) values (:titulli, :foto, :autori, :pershkrimi, :isbn, :pagenr)";
+
+		session_start();
+        $username = $_SESSION['username'];
+
+        $this->query = "insert into books (titulli, foto, autori, pershkrimi, isbn, pagenr,created_by) values (:titulli, :foto, :autori, :pershkrimi, :isbn, :pagenr, :created_by)";
         $statement = $this->conn->prepare($this->query);
 		$titulli = $data->getTitulli();
         $foto = $data->getFoto();
@@ -111,9 +121,64 @@ class UserMapper extends DatabasePDOConfiguration{
         $statement->bindParam(":pershkrimi", $pershkrimi);
         $statement->bindParam(":isbn", $isbn);
         $statement->bindParam(":pagenr", $pagenr);
+        $statement->bindParam(":created_by", $username);
         $statement->execute();
     }
 	
+	public function editBook(\BookData $book, $bookid)
+    {
+		session_start();
+        $username = $_SESSION['username'];
+
+        $this->query = "update books set titulli=:titulli,foto=:foto,autori=:autori,pershkrimi=:pershkrimi,isbn=:isbn,pagenr=:pagenr,edited_by=:edited_by where bookid=:id";
+        var_dump($book);
+        $statement = $this->conn->prepare($this->query);
+        $titulli = $book->getTitulli();
+        $foto = $book->getFoto();
+        $autori = $book->getAutori();
+        $pershkrimi = $book->getPershkrimi();
+        $isbn = $book->getISBN();
+        $pagenr = $book->getPagenr();
+        $statement->bindParam(":titulli", $titulli);
+        $statement->bindParam(":foto", $foto);
+        $statement->bindParam(":autori", $autori);
+        $statement->bindParam(":pershkrimi", $pershkrimi);
+        $statement->bindParam(":isbn", $isbn);
+        $statement->bindParam(":pagenr", $pagenr);
+        $statement->bindParam(":edited_by", $username);
+        $statement->bindParam(":id", $bookid);
+        $statement->execute();
+    }
+
+	public function editArtist(\MusicData $artist, $artistid)
+    {
+        $this->query = "update music set name=:name,description=:description,foto=:foto where artistid=:id";
+        var_dump($artist);
+        $statement = $this->conn->prepare($this->query);
+        $name = $artist->getName();
+        $description = $artist->getDescription();
+        $foto = $artist->getFoto();
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":description", $description);
+        $statement->bindParam(":foto", $foto);
+        $statement->bindParam(":id", $artistid);
+        $statement->execute();
+    }
+
+	public function editPlace(\PlaceData $place, $placeid)
+    {
+        $this->query = "update places set name=:name,description=:description,link=:link where placeid=:id";
+        var_dump($place);
+        $statement = $this->conn->prepare($this->query);
+        $name = $place->getName();
+        $description = $place->getDescription();
+        $link = $place->getLink();
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":description", $description);
+        $statement->bindParam(":link", $link);
+        $statement->bindParam(":id", $placeid);
+        $statement->execute();
+    }
 	
 	public function getAllBooks(){
 		$this -> query = "select *  from books";
@@ -175,15 +240,39 @@ class UserMapper extends DatabasePDOConfiguration{
 	}
 	
 		public function getBookByTitle($titulli){
-		$this->query = "select * from books where titulli = :titulli";
+		$this->query = "select * from books where titulli = ?";
 		$statement = $this->conn->prepare($this->query);
-		$statement -> bindParam(":titulli",$titulli);
-		$statement -> execute();
+		$statement -> execute(array($titulli));
 		$book = $statement->fetchAll(PDO::FETCH_ASSOC);
 		return $book;
 		}
 
+		public function getBookByID($bookid){
+		$this -> query = "select * from books where bookid=:id";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":id",$bookid);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
 
+	public function getArtistByID($artistid){
+		$this -> query = "select * from music where artistid=:id";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":id",$artistid);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
+	public function getPlaceByID($placeid){
+		$this -> query = "select * from places where placeid=:id";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":id",$placeid);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
 
 
 }

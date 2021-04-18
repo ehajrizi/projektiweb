@@ -17,6 +17,10 @@ if (isset($_GET['id'])) {
             <input type="text" name="name" class="input" placeholder="name..."/><br>
             <label for="">Username:</label>
             <input type="text" name="username" class="input" placeholder="username..."/><br>
+            <label for="">Email:</label>
+            <input type="email" name="email" class="input" placeholder="email..."/><br>
+            <label for="">Role:</label>
+            <input type="number" name="role" class="input" placeholder="role..."/><br>
 			 <button type="submit">Enter</button>
         </div>
     </form>

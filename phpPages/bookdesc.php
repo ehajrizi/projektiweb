@@ -1,12 +1,14 @@
 <?php session_start(); 
 include_once '../phpFiles/dbConfig.php';
+include_once '../phpFiles/bookClass.php';
 include '../phpFiles/userMapper.php'; 
 
-if(isset($_SESSION['titulli'])){
-	$titulli = $_GET['titulli'];
+if(!empty($_GET['title'])){
+	$titulli = $_REQUEST['title'];
 	$books = new UserMapper();
 	$book = $books->getBookByTitle($titulli);
  }
+
 ?>
 <!DOCTYPE html>
 <html>

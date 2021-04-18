@@ -6,7 +6,9 @@ include_once 'simpleUserClass.php';
 $userid = $_GET['id'];
 $username = $_GET['username'];
 $name = $_GET['name'];
-$simpleUser = new SimpleUser($name,$username,"","",0);
+$email = $_GET['email'];
+$role = $_GET['role'];
+$simpleUser = new SimpleUser($name,$username,$email,"",$role);
 
 $mapper = new UserMapper();
 $mapper->edit($simpleUser, $userid);

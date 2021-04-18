@@ -3,9 +3,9 @@ session_start();
 include_once '../phpFiles/dbConfig.php';
 include '../phpFiles/userMapper.php';
 
-$result = new UserMapper();
+$books = new UserMapper();
 /*$result2 = new UserMapper();*/
-$result = $result -> getAllBooks();
+$book = $books -> getAllBooks();
 /*$result2 = $result2 -> getAllComments();*/
 
 
@@ -14,9 +14,10 @@ if(isset($_POST['upload'])){
 	$db = mysqli_connect("localhost","root","","projektiweb-1");
 	$image = $_FILES['image']['name'];
 	$text = $_POST['text'];
+	$username = $_SESSION['username'];
 
 	if(!empty($image) || !empty($text)){
-	$sql = "Insert into images (image,text) values ('$image','$text')";
+	$sql = "Insert into images (image,text,written_by) values ('$image','$text','$username')";
 	mysqli_query($db,$sql);
 	}
 
@@ -81,17 +82,17 @@ if(isset($_POST['upload'])){
 				<ul class='list-inline'>
 
 				<?php 
-                $result = array_chunk($result,1);
+                $books = array_chunk($book,1);
 
-                foreach ($result as $result) {
+                foreach ($books as $book) {
                     echo "<li>";
                     echo "<div class='card'>";
-                    foreach ($result as $item) {  ?>   
+                    foreach ($book as $item) {  ?>   
 						<header class='article-header'>
 						<div class='book-pic'>
-                        <img src="<?php echo $item['foto'];?>" onclick="location.href ='bookdesc.php';"/>
+                        <img src="<?php echo $item['foto'];?>" onclick="location.href='bookdesc.php?title=<?php echo $item['titulli'];?>'"/>
 						</div>
-						<h3 class="article-title"><a href="bookdesc.php"><?php echo $item['titulli'];?></a></h3>
+						<h3 class="article-title"><a href="bookdesc.php?title=<?php echo $item['titulli'];?>"><?php echo $item['titulli'];?></a></h3>
 						</header>
 						<div class="info">
 							<div class="caption">Author</div>
@@ -105,7 +106,7 @@ if(isset($_POST['upload'])){
 
 			   <?php if(isset($_SESSION["role"]) && $_SESSION["role"]==1):?>
 			   <br>
-			   <button id="adbut"><a href="../phpFiles/addbooks.php">Add Book</a></button>
+			   <button id="adbut"><a href="../phpFiles/addbooks.php?>">Add Book</a></button>
 			   <?php endif;?>
 	
 			<h3>Comments:</h3>
@@ -120,6 +121,7 @@ if(isset($_POST['upload'])){
 				while($row = mysqli_fetch_array($result2)){
 					echo "<div id='img_div'>"; 
 					if(!empty($row['image'])){
+						echo "<p><strong>".$row['written_by']."</strong></p>";
 						echo "<img src='images/".$row['image']."'>";}
 						echo "<p>".$row['text']."</p>";
 					echo "</div>";
