@@ -346,6 +346,7 @@ input[type=text], textarea {
  letter-spacing: 1px;
  text-transform: uppercase;
  transition: transform 80ms ease-in;
+ 
 }
 
 #submitbtn,#places_button,#music_button,#adbut,#submit_mu_bobtn,#submit_pl_btn,#submitbobtn:active {
@@ -354,24 +355,53 @@ input[type=text], textarea {
 
 #submitbtn,#places_button,#music_button,#adbut,#submit_mu_bobtn,#submit_pl_btn,#submitbobtn:focus {
  outline: none;
+
 }
 
 .linkbtn:link {
+
   color:cornsilk;
+  text-decoration: none;
 
 }
 .linkbtn:visited {
   color:cornsilk;
+  text-decoration: none;
   
 }
 .linkbtn:hover {
   color:cornsilk;
+  text-decoration: none;
+
   
 }
 .linkbtn:active {
   color:cornsilk;
+  text-decoration: none;
   
 }
+
+.music_link:link {
+  color:#4e7769;
+  text-decoration: none;
+
+}
+.music_link:visited {
+  color:#4e7769;
+  text-decoration: none;
+  
+}
+.music_link:hover {
+  color:#4e7769;
+  text-decoration: none;
+  
+}
+.music_link:active {
+  color:#4e7769;
+  text-decoration: none;
+  
+}
+
 /* rregullimi i pjeses se footerit  */
 footer {
   position: sticky;

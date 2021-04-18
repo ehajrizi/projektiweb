@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 		const foto = document.getElementById('foto');
 
+		const link = document.getElementById('link');
+
 		
 
-			const submit_mu_bobtn = document.getElementById('submit_mu_bobtn');
+		const submit_mu_bobtn = document.getElementById('submit_mu_bobtn');
 
 		if (name.value == "") {
 			alert('Please add a name!');
@@ -26,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			foto.focus();
 			return false;
 		}
+		if (link.value == "") {
+			alert('Please add a playlist link!');
+			link.focus();
+			return false;
+		}
+		
 		
 		
 	

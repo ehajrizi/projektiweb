@@ -15,6 +15,9 @@ include_once 'userMapper.php';
                 <input type="hidden" name="size" value="1000000">
                 <label for="foto">Artist Photo</label><br>
                 <input type="file" id="foto" name="foto"><br>
+
+                <label for="link">PLaylist Link</label><br>
+                <input type="url" id="link" name="link" placeholder="Link.."><br>
                 
 			    <input type="submit" id="submit_mu_bobtn" name="submit_mu_bobtn" value="Upload Artist">
             </form>

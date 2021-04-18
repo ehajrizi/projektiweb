@@ -9,11 +9,11 @@ if(isset($_POST['submit_mu_bobtn'])){
 	$image ="../".($_FILES['foto']['name']);
 	$name = $_REQUEST['name'];
 	$description = $_REQUEST['description'];
-
+	$link = $_REQUEST['link'];
     $username = $_SESSION['username'];
 
 	if(!empty($name) && !empty($_FILES['foto']['name']) && !empty($description) ){
-		$sql = "Insert into music (name,description,foto,created_by) values ('$name','$description','$image','$username')";
+		$sql = "Insert into music (name,description,foto,link,created_by) values ('$name','$description','$image','$link','$username')";
 		mysqli_query($db,$sql);
 	}
 

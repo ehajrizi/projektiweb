@@ -22,9 +22,10 @@ $result = $result -> getAllArtists();
 
 
                         <div class ="artist_img">
-                             <img src ="<?php echo $item['foto'];?>" alt="<?php echo $item['name'];?>">
+                             <img src ="<?php echo $item['foto'];?>"onclick="location.href='<?php echo $item['link'];?>'"alt="<?php echo $item['name'];?>">
                         </div>
-                        <h3> <?php echo $item['name'];?> </h3>
+                        <h3><a class="music_link"href="<?php echo $item['link'];?>"><?php echo $item['name'];?></a></h3>
+                        
                         <p class="role"><?php echo $item['description'];?></p>  
                         <?php
 

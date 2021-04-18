@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once 'header.php';
 include_once 'userMapper.php';
 if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
     $mapper =  new UserMapper();
@@ -13,47 +13,6 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Find your roots</title>
-        <link rel="stylesheet" href="../css/style.css">
-
-</script>
-    </head>
-	
-    <body>
-        <div class ="all-backgound">
-            <div class="header">
-				<a href="../phpFiles/logout.php">Log Out</a>
-
-                <?php
-					if(isset($_SESSION["role"]) && $_SESSION["role"] == 1):
-				?>
-				<a href="dashboard.php">Dashboard</a>
-				<?php else:?>
-				<a href="../phpPages/getInvolved.php">Get involved</a>
-				<?php endif; ?>
-
-
-                <div class="dropdown">
-                <button class="dropbtn">Discover
-                    <i class="fa fa-caret-down"></i>
-                </button>
-					<div class="dropdown-content">
-						<a href="../phpPages/books.php">Books</a>
-						<a href="../phpPages/Music.php">Music</a>
-						<a href="../phpPages/Places.php">Places</a>
-					</div>
-                </div>
-
-                <a href="../phpPages/aboutUs.php">About Us</a>
-                <a href="../phpPages/home.php">Home</a>
-                
-                
-            </div>
 
 		
 <div class="dashboard_body">
@@ -174,6 +133,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                     <td>Artist Name</td>
                     <td>Artist Description</td>
                     <td>Artist Photo</td>
+                    <td>Playlist Link</td>
                     <td>Created By</td>
                     <td>Edited By</td>
                     <td>Edit</td>
@@ -188,6 +148,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == 1) {
                         <td><?php echo $music['name']; ?></td>
                         <td><?php echo $music['description']; ?></td>
                         <td><?php echo $music['foto']; ?></td>
+                        <td><?php echo $music['link']; ?></td>
                         <td><?php echo $music['created_by']; ?></td>
                         <td><?php echo $music['edited_by']; ?></td>
                         <td><a href=<?php echo "editMusic.php?id=" . $music['artistid'];
