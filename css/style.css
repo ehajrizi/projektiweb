@@ -645,7 +645,7 @@ ul {
     display: none;
 }
 
-#myBtn,#addBtn,#addCom{
+#myBtn,#addBtn,#addCom,#upload{
     border-radius: 20px;
     border: 1px solid darkorange;
     background-color: darkorange;
@@ -1147,47 +1147,52 @@ button.ghost {
         transform: scale(1);
     }
 }
-.main-activity{
-  max-width: 1000px;
-  margin: auto;
-  float:right; 
-   clear: right;
+.main-activity {
+    margin-left: 10px;
+    float: center;
+    clear: both;
 }
 
-h1 {
-  font-size: 50px;
-  word-break: break-all;
+.main-activity h1 {
+    font-size: 50px;
+    word-break: break-all;
 }
+
 
 .row_activity {
-  margin: 8px -16px;
+    margin: 8px -16px;
 }
 
-.row_activity,
-.row_activity > .box_activity {
-  padding: 8px;
-}
-
+    .row_activity,
+    .row_activity > .box_activity {
+        padding: 8px;
+    }
 
 .box_activity {
-  float: left;
-  width: 25%;
+    float: left;
+    width: 250px;
+    margin-left:20px;
 }
-
 
 .row_activity:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
-
 
 .activity_content {
-  background-color: white;
-  padding: 10px;
+    background-color: white;
+    padding: 10px;
 }
 
+.box_activity img {
+    height: 145px;
+    width: 218px;
+}
 
+.places_button {
+   align-content: center;
+}
   
   /*DASHBOARD*/
 .dashboard_body h1{

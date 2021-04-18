@@ -4,6 +4,9 @@
 		private $name;
 		private $description;
 		private $link;
+		private $act_img;
+		private $name_act;
+		private $description_act;
 	   
 	   public function __construct($name, $description, $link){
 		   $this->name = $name;
@@ -22,6 +25,7 @@
 	   public function getLink(){
 		   return $this -> link;
 	   }
+
 
     }
 ?>
