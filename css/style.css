@@ -982,55 +982,114 @@ button.ghost {
 	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 25px;
 	text-align: center;
+  margin-bottom: 2.5px;
   
   }
   
-  .places img{
-	  width: 200px;
-	  height: 150px;
-    position: center;
   
-  }
-  
-  .places {
-    display: flex;
+  .places-left {
+    width:50%;
+    height:50%;
+    float:left;
+    padding:70px;
     align-items: center;
     justify-content: center;
 }
-  .map{
-    width: 50%;
-    float: center;
-    padding: 10px;
-  } 
-  
-  .otherPlaces{
-	  width: 40%;
-    float: center;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  
-  .map p{
-	 text-align: center; 
-  }
-  
-  .place_info{
-    margin:10px;
-	  width: 40%;
-    float: center;
-    padding: 5px;
-
-  }
-  .place_info h3 {
-    font-size: 20px;
-    text-align:left;
+ 
+  .places-right{
+    width:50%;
+    height:50%;
+    float:right;
+    padding:70px;
+    margin:0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    
   }
 
-  .place_img {
-    align-content: center;
-  }
+  .places-slider{
+    height:460px;
+    width:80%;
+    position: relative;
+    overflow:hidden;
+
+}
+
+.places-slider-item {
+    height:inherit;
+    width: inherit;
+    position:absolute;
+    opacity:0;
+    animation: cycleImages 31s infinite;
+
+}
+
+.places-slider-item img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    animation: zoom 61s infinite;
+   
+}
+.places-slider-item:nth-child(1),
+.places-slider-item:nth-child(1) img{
+    animation-delay: 0s;
+}
+.places-slider-item:nth-child(2),
+.places-slider-item:nth-child(2) img{
+    animation-delay: 10s;
+}
+
+.places-slider-item:nth-child(3),
+.places-slider-item:nth-child(3) img{
+    animation-delay: 20s;
+}
+
+.places-slider-item-text{
+    max-width:50%;
+    position:absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    background-color: rgba(138, 122, 93, 0.8);
+    color:#fff;
+    padding :20px;
+}
+.places-slider-item-text h1{
+    font-size:20px;
+    text-transform:uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+
+}
+.places-slider-item-text p{
+    font-size:14px;
+    line-height:18px;
+    letter-spacing: 1px;
+    font-weight:300;
+
+} 
+
+@keyframes cycleImages {
+
+    15%{
+        opacity:1;
+        
+    }
+    50%{
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes zoom {
+    100%{
+        transform: scale(1);
+    }
+}
+
   
   /*DASHBOARD*/
 .dashboard_body h1{
