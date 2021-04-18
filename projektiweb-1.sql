@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
@@ -190,7 +190,7 @@ INSERT INTO `places` (`placeid`, `name`, `description`, `link`, `created_by`, `e
 (2, 'Prevalla', 'Prevalla is a ski resort and touristic village which approximately is 30 km away from Prizren, Kosovo and about twelve kilometers from Brezovica, the largest ski center in Kosovo. Prevalla (Prevalac) is a popular destination for hikers or skiers. The vill', 'https://www.balkanhikingadventure.com/wp-content/uploads/2015/12/DSC09201.jpg', '', ''),
 (3, 'Prizreni', 'Prizren is a city in Kosovo and the seat of the eponymous municipality and district. As of the constitution of Kosovo, the city is designated as the historical capital.', 'https://upload.wikimedia.org/wikipedia/commons/e/e5/37_Prizreni_-_Xhamia_e_Sinan_Pash%C3%ABs_-_The_Sinan_Pasha_Moscue.JPG', '', ''),
 (4, 'Liqeni i Badovcit', 'Badovc Lake or Badovac Lake is an artificial reservoirs on the river \"Gračanka\" two kilometers above Gračanica, Kosovo, built in 1963–1966 in order to supply city of Pristina with water.', 'https://live.staticflickr.com/8878/17943734213_13fd3d16f4_b.jpg', '', ''),
-(6, 'Germia Park', 'A place to relax and have fun!\r\nThe fresh air is also a companion to you.', 'http://photos.wikimapia.org/p/00/01/49/53/98_big.jpg', 'albana123', '');
+(5, 'Gjakova', 'gjakova o ky vend mistik', 'https://crowdsourcingweek.com/wp-content/uploads/2015/08/Gjakova_cth1.jpg', 'albana123', 'albana123');
 
 -- --------------------------------------------------------
 
@@ -220,6 +220,12 @@ INSERT INTO `webusers` (`userid`, `name`, `username`, `password`, `email`, `role
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
+  ADD PRIMARY KEY (`activitiesid`);
 
 --
 -- Indexes for table `activities`
@@ -266,6 +272,12 @@ ALTER TABLE `webusers`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `activities`
+--
+ALTER TABLE `activities`
+  MODIFY `activitiesid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `activities`

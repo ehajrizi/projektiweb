@@ -348,6 +348,26 @@ input[type=text], textarea {
  transition: transform 80ms ease-in;
  
 }
+#music_button,#places_button{
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  margin-top:22%;
+  margin-bottom:0%;
+ 
+  margin: auto; 
+}
+#submit_pl_btn,#submit_mu_bobtn{
+
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  margin-top:22px;
+  margin-bottom:0%;
+  
+  
+}
+
 
 #submitbtn,#places_button,#music_button,#adbut,#submit_mu_bobtn,#submit_pl_btn,#submitbobtn,#upload:active {
  transform: scale(0.95);
@@ -410,6 +430,8 @@ input[type=text], textarea {
     overflow: hidden !important;
     text-overflow: ellipsis;
 }
+
+
 
 /* rregullimi i pjeses se footerit  */
 footer {
@@ -774,7 +796,7 @@ ul {
  flex-direction: column;
  font-family: 'Montserrat', sans-serif;
  height: 100%;
- margin: -20px 0 50px;
+ margin: 0px;
  width: 100%;
  overflow-y:hidden;
 }
@@ -814,7 +836,7 @@ ul {
  color: #333;
  font-size: 14px;
  text-decoration: none;
- margin: 15px 0;
+ margin: 10px 0;
  font-family: 'Montserrat', sans-serif;
 } 
 
@@ -1087,7 +1109,7 @@ button.ghost {
 }
 .places-slider-item:nth-child(1),
 .places-slider-item:nth-child(1) img{
-    animation-delay: 0s;
+    animation-delay: 5s;
 }
 .places-slider-item:nth-child(2),
 .places-slider-item:nth-child(2) img{
@@ -1130,7 +1152,7 @@ button.ghost {
         opacity:1;
         
     }
-    50%{
+    40%{
         opacity:0;
 
     }
@@ -1351,7 +1373,7 @@ table a:focus {
     letter-spacing:1px;
     padding:100px 0;
     width:47%;
-    height:100hv;
+    height:100%;
     float:center;
   }
   .aboutUs-inner-container{
