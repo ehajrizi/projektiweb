@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2021 at 06:14 PM
+-- Generation Time: Apr 18, 2021 at 08:04 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -169,19 +169,22 @@ CREATE TABLE `places` (
   `description` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   `created_by` varchar(255) NOT NULL,
-  `edited_by` varchar(255) NOT NULL
+  `edited_by` varchar(255) NOT NULL,
+  `act_img` varchar(255) NOT NULL,
+  `name_act` varchar(255) NOT NULL,
+  `description_act` varchar(600) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `places`
 --
 
-INSERT INTO `places` (`placeid`, `name`, `description`, `link`, `created_by`, `edited_by`) VALUES
-(1, 'Prishtina', 'Pristina is the capital of Kosovo[a] and the seat of the eponymous municipality and district. Its population is predominantly Albanian-speaking constituting the second-largest such city in Europe, after Tirana. The city is located in the northeastern sect', 'http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg', '', ''),
-(2, 'Prevalla', 'Prevalla is a ski resort and touristic village which approximately is 30 km away from Prizren, Kosovo and about twelve kilometers from Brezovica, the largest ski center in Kosovo. Prevalla (Prevalac) is a popular destination for hikers or skiers. The vill', 'https://www.balkanhikingadventure.com/wp-content/uploads/2015/12/DSC09201.jpg', '', ''),
-(3, 'Prizreni', 'Prizren is a city in Kosovo and the seat of the eponymous municipality and district. As of the constitution of Kosovo, the city is designated as the historical capital.', 'https://upload.wikimedia.org/wikipedia/commons/e/e5/37_Prizreni_-_Xhamia_e_Sinan_Pash%C3%ABs_-_The_Sinan_Pasha_Moscue.JPG', '', ''),
-(4, 'Liqeni i Badovcit', 'Badovc Lake or Badovac Lake is an artificial reservoirs on the river \"Gračanka\" two kilometers above Gračanica, Kosovo, built in 1963–1966 in order to supply city of Pristina with water.', 'https://live.staticflickr.com/8878/17943734213_13fd3d16f4_b.jpg', '', ''),
-(5, 'Gjakova', 'gjakova o ky vend mistik', 'https://crowdsourcingweek.com/wp-content/uploads/2015/08/Gjakova_cth1.jpg', 'albana123', 'albana123');
+INSERT INTO `places` (`placeid`, `name`, `description`, `link`, `created_by`, `edited_by`, `act_img`, `name_act`, `description_act`) VALUES
+(1, 'Prishtina', 'Pristina is the capital of Kosovo[a] and the seat of the eponymous municipality and district. Its population is predominantly Albanian-speaking constituting the second-largest such city in Europe, after Tirana. The city is located in the northeastern sect', 'http://farm7.static.flickr.com/6172/6200449324_dcf0c9e7a1_b.jpg', '', '', 'https://c0.wallpaperflare.com/preview/226/523/794/prishtina-mosque-mezquita-muslim.jpg', 'mu shtetit', 'knaqu loqk'),
+(2, 'Prevalla', 'Prevalla is a ski resort and touristic village which approximately is 30 km away from Prizren, Kosovo and about twelve kilometers from Brezovica, the largest ski center in Kosovo. Prevalla (Prevalac) is a popular destination for hikers or skiers. The vill', 'https://www.balkanhikingadventure.com/wp-content/uploads/2015/12/DSC09201.jpg', '', '', '', '', ''),
+(3, 'Prizreni', 'Prizren is a city in Kosovo and the seat of the eponymous municipality and district. As of the constitution of Kosovo, the city is designated as the historical capital.', 'https://upload.wikimedia.org/wikipedia/commons/e/e5/37_Prizreni_-_Xhamia_e_Sinan_Pash%C3%ABs_-_The_Sinan_Pasha_Moscue.JPG', '', '', '', '', ''),
+(4, 'Liqeni i Badovcit', 'Badovc Lake or Badovac Lake is an artificial reservoirs on the river \"Gračanka\" two kilometers above Gračanica, Kosovo, built in 1963–1966 in order to supply city of Pristina with water.', 'https://live.staticflickr.com/8878/17943734213_13fd3d16f4_b.jpg', '', '', '', '', ''),
+(5, 'Gjakova', 'gjakova o ky vend mistik', 'https://crowdsourcingweek.com/wp-content/uploads/2015/08/Gjakova_cth1.jpg', 'albana123', 'albana123', '', '', '');
 
 -- --------------------------------------------------------
 
