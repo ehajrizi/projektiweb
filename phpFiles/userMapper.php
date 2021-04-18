@@ -247,6 +247,33 @@ class UserMapper extends DatabasePDOConfiguration{
 		return $book;
 		}
 
+				public function getBookByID($bookid){
+		$this -> query = "select * from books where bookid=:id";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":id",$bookid);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
+	public function getArtistByID($artistid){
+		$this -> query = "select * from music where artistid=:id";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":id",$artistid);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
+	public function getPlaceByID($placeid){
+		$this -> query = "select * from places where placeid=:id";
+		$statement = $this -> conn -> prepare($this -> query);
+		$statement -> bindParam(":id",$placeid);
+		$statement -> execute();
+		$result = $statement -> fetch(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
 
 
 
